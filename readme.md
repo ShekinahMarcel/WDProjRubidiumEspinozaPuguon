@@ -23,7 +23,7 @@ JapanEase is a travel guide website designed to help visitors explore Japan with
 ---
 
 ### Itinerary  
-- List of major spots or must-visit areas (e.g., Tokyo, Kyoto, Osaka, Hokkaido).  
+- List of must-visit tourist spots in Tokyo.  
 - Activities to do in each area (e.g., temple visits, shopping, skiing, onsen baths).  
 - Recommendations on the best time or day to visit each location.  
 - Description of each destination’s unique features and cultural highlights.  
