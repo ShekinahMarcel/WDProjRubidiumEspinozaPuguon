@@ -116,46 +116,28 @@
 }
 
 .card {
-  width: 250px;
-  background: #f1faee;
+  background-color: #f1faee;         
   border-radius: 10px;
-  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  transition: 0.3s;
   position: relative;
+  z-index: 1;
 }
 
-/* HIDDEN detailed content */
-.more-content {
-  display: none;
-}
-
-/* EXPANDED card */
 .card.expanded {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  height: auto;
-  z-index: 9999;
-  background: #f1faee;
-  padding: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  border-radius: 15px;
+  transform: scale(1.5);   /* make it bigger */
+  z-index: 1000;           /* bring to front */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* Show all content when expanded */
-.card.expanded .more-content {
-  display: block;
-  margin-top: 15px;
-}
-
-.card.expanded img {
+.card img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  height: 180px;
+  object-fit: cover;               
+  display: block;
 }
 
 .card h4 {
@@ -191,12 +173,7 @@
     <img src="https://www.travelcaffeine.com/wp-content/uploads/2018/08/kinopio-cafe-toad-restaurant-super-nintendo-world-universal-studios-japan-osaka-532.jpg" alt="Osaka">
     <h4>Universal Studios</h4>
     <p>heh dattebayo fellas!</p>
-
-      <div class="more-content">
-    <p>This is the bigger text that shows only when expanded.</p>
-    <img src="images/food1a.jpg">
   </div>
-</div>
 
   <div class="card">
     <img src="https://i.pinimg.com/736x/4d/49/2d/4d492dcb340cae11a8d6040efe147562.jpg" alt="Osaka, Japan">
