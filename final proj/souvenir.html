@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JapanEase - Souvenirs From Japan">
+  <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
+  <link rel="icon" type="image/png" href="images/WEBSITEICON.png">
+  <title>JapanEase | Souvenirs</title>
+
+  <style>
+    header h1 {
+      color: #e63946;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a8dadc;
+      color: #1d3557;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #e63946;
+      color: #f1faee;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      background: url('images/JAPANBACKGROUND.jpg') center/cover no-repeat;
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 70px;
+      height: 70px;
+    }
+
+    nav {
+      background-color: #1d3557;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: #f1faee;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      color: #a8dadc;
+    }
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 20px;
+  background: url('images/BACKGROUND.jpg') center/cover no-repeat;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+section {
+  background-color: #f1faee;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;       /* full width */
+  max-width: 1200px; /* optional, limits width on very wide screens */
+  margin: 0 auto;    /* center the section */
+}
+
+    section h2 {
+      text-align: center;
+      color: #e63946;
+      margin-top: 0;
+    }
+
+    .item-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;          /* stretch row across section */
+  box-sizing: border-box;
+}
+
+    .item-row img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .item-desc h4 {
+      margin: 0 0 10px;
+      color: #1d3557;
+    }
+
+    .item-desc p {
+      margin: 0;
+      color: #457b9d;
+    }
+
+    footer {
+      background-color: #457b9d;
+      color: #f1faee;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #f1faee;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media(max-width: 600px) {
+      .item-row {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .item-row img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
+    <h1>JapanEase</h1>
+    <h2>A Beginner’s Guide to Japan</h2>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="final.html">Home</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a href="foodguide.html">Food Guide</a>
+    <a href="traveltips.html">Travel Tips</a>
+    <a href="souvenir.html">Souvenirs</a>
+    <a href="aboutus.html">About Us</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <section>
+      <h2>Food</h2>
+
+      <div class="item-row">
+        <img src="https://m.media-amazon.com/images/I/A1mLnDrUnFL.jpg" alt="Food 1">
+        <div class="item-desc">
+          <h4>Kitkat</h4>
+          <p>Short description of the food item.</p>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="https://japanshopping.org/files/itemcontents/-_2022-05-30-074503.png" alt="Food 2">
+        <div class="item-desc">
+          <h4>Sake</h4>
+          <p>Short description of the food item.</p>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="images/food1.jpg" alt="Food 3">
+        <div class="item-desc">
+          <h4>Food Name 3</h4>
+          <p>Short description of the food item.</p>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="images/food1.jpg" alt="Food 4">
+        <div class="item-desc">
+          <h4>Food Name 4</h4>
+          <p>Short description of the food item.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Souvenirs</h2>
+
+      <div class="item-row">
+        <img src="images/item1.jpg" alt="Souvenir 1">
+        <div class="item-desc">
+          <h4>Item Name 1</h4>
+          <p>Short description of the souvenir.</p>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="images/item2.jpg" alt="Souvenir 2">
+        <div class="item-desc">
+          <h4>Item Name 2</h4>
+          <p>Short description of the souvenir.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 JapanEase. All Rights Reserved.</p>
+    <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
+  </footer>
+
+</body>
+</html>
