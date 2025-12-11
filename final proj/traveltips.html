@@ -8,28 +8,31 @@
   <link rel="icon" type="image/png" href="WEBSITEICON.png">
   <title>JapanEase | A Beginner’s Guide to Japan</title>
   <style>
-    header h1 {
-      color: #e63946;
+    :root {
+      --autumn-red: #b63e2e;
+      --autumn-orange: #d87c3f;
+      --autumn-light: #f6e7d8;
+      --autumn-dark: #3c2415;
+      --autumn-brown: #8a5a44;
     }
 
-    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #a8dadc;
-      color: #1d3557;
+      background-color: var(--autumn-light);
+      color: var(--autumn-dark);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background-color: #e63946;
-      color: #f1faee;
+      background-color: var(--autumn-red);
+      color: var(--autumn-red);
       text-align: center;
       padding: 50px 20px;
       position: relative;
-      background: url('images/JAPANBACKGROUND.jpg') center/cover no-repeat;
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
     }
 
     header img.logo {
@@ -40,21 +43,25 @@
       height: 70px;
     }
 
+    header h1 {
+      color: var(--autumn-dark);
+    }
+
     nav {
-      background-color: #1d3557;
+      background-color: var(--autumn-brown);
       text-align: center;
       padding: 12px 0;
     }
 
     nav a {
-      color: #f1faee;
+      color: var(--autumn-light);
       text-decoration: none;
       font-weight: bold;
       margin: 0 12px;
     }
 
     nav a:hover {
-      color: #a8dadc;
+      color: var(--autumn-orange);
     }
 
     main {
@@ -63,7 +70,8 @@
       flex-wrap: wrap;
       gap: 20px;
       padding: 40px 20px;
-      background: url('images/BACKGROUND.jpg') center/cover no-repeat;
+      background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
+      min-height: 100vh;
     }
 
     section {
@@ -78,20 +86,9 @@
     h3 {
       margin-top: 0;
     }
-
-    .heart {
-      font-size: 24px;
-      color: gray;
-      cursor: pointer;
-    }
-
-    .heart:hover {
-      color: #e63946;
-    }
-
     footer {
-      background-color: #457b9d;
-      color: #f1faee;
+      background-color: var(--autumn-brown);
+      color: var(--autumn-light);
       text-align: center;
       padding: 20px;
       font-size: 14px;
@@ -99,12 +96,13 @@
     }
 
     footer a {
-      color: #f1faee;
+      color: var(--autumn-light);
       text-decoration: none;
       margin: 0 8px;
     }
 
     footer a:hover {
+      color: var(--autumn-orange);
       text-decoration: underline;
     }
 
@@ -156,3 +154,13 @@
     <a href="souvenir.html">Souvenirs</a>
     <a href="aboutus.html">About Us</a>
   </nav>
+
+    <footer>
+    <p>© 2025 JapanEase. All Rights Reserved.</p>
+    <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
+    <p>
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
