@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="JapanEase - A Beginner’s Guide to Japan. Discover Japan’s culture, travel tips, food, and must-visit destinations.">
+  <meta name="description" content="JapanEase Travel Tips - Essential tips for traveling around Japan.">
   <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
   <link rel="icon" type="image/png" href="WEBSITEICON.png">
-  <title>JapanEase | A Beginner’s Guide to Japan</title>
+  <title>JapanEase | Travel Tips</title>
+
   <style>
     :root {
       --autumn-red: #b63e2e;
@@ -27,8 +28,6 @@
     }
 
     header {
-      background-color: var(--autumn-red);
-      color: var(--autumn-red);
       text-align: center;
       padding: 50px 20px;
       position: relative;
@@ -41,10 +40,6 @@
       right: 15px;
       width: 70px;
       height: 70px;
-    }
-
-    header h1 {
-      color: var(--autumn-dark);
     }
 
     nav {
@@ -65,27 +60,86 @@
     }
 
     main {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px 20px;
+      padding: 50px 30px;
       background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
       min-height: 100vh;
     }
 
-    section {
-      background-color: #f1faee;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 350px;
-      max-width: 500px;
+    h2 {
+      text-align: center;
+      color: rgb(27, 10, 10);
+      margin-bottom: 40px;
     }
 
-    h3 {
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .tip-card {
+      background: rgba(0,0,0,0.45);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      color: white;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-6px);
+      background: rgba(0,0,0,0.65);
+    }
+
+    .tip-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .tip-card h3 {
+      padding: 15px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: var(--autumn-light);
+      color: var(--autumn-dark);
+      padding: 30px;
+      max-width: 500px;
+      border-radius: 16px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content h3 {
       margin-top: 0;
     }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
     footer {
       background-color: var(--autumn-brown);
       color: var(--autumn-light);
@@ -94,51 +148,9 @@
       font-size: 14px;
       margin-top: auto;
     }
-
-    footer a {
-      color: var(--autumn-light);
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    footer a:hover {
-      color: var(--autumn-orange);
-      text-decoration: underline;
-    }
-
-    .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px;
-  padding: 30px;
-}
-
-.card {
-  background-color: #f1faee;         
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  overflow: hidden;
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;               
-  display: block;
-}
-
-.card h4 {
-  margin: 15px 0 5px;
-  color: #1d3557;
-}
-
-.card p {
-  padding: 0 10px 15px;
-  color: #457b9d;
-}
   </style>
-  </head>
+</head>
+
 <body>
   <header>
     <img src="WEBSITEICON.png" alt="JapanEase Logo" class="logo">
@@ -155,12 +167,119 @@
     <a href="aboutus.html">About Us</a>
   </nav>
 
-    <footer>
+  <main>
+    <h2>Essential Travel Tips</h2>
+
+    <div class="card-grid">
+      <div class="tip-card" onclick="openModal(0)">
+        <img src="https://i.pinimg.com/736x/eb/b8/ef/ebb8ef73f9c0a3a4530aad3ab38db07b.jpg">
+        <h3>Carry Cash</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(1)">
+        <img src="https://i.pinimg.com/736x/7a/8e/23/7a8e23bae15770a9d9365aa63f7e2ae7.jpg">
+        <h3>Learn Basic Phrases</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(2)">
+        <img src="https://i.pinimg.com/1200x/6a/67/30/6a6730fde2b1ec817690e054e9bae485.jpg">
+        <h3>Respect Local Etiquette</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(3)">
+        <img src="https://i.pinimg.com/1200x/d3/18/13/d31813591fe623a6a6b5c875491f4853.jpg">
+        <h3>Use Public Transport</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(4)">
+        <img src="https://i.pinimg.com/736x/87/95/e0/8795e0cc19e6b27e3286485ef9869095.jpg">
+        <h3>Stay Connected</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(5)">
+        <img src="https://i.pinimg.com/1200x/0a/26/97/0a2697dbc822e42b444311d9c6973642.jpg">
+        <h3>Mind the Trash Rules</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(6)">
+        <img src="https://i.pinimg.com/1200x/26/78/db/2678db1fc6e9fdc8aa8e0d94aaf40024.jpg">
+        <h3>Be Punctual</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(7)">
+        <img src="https://i.pinimg.com/1200x/fc/2f/ce/fc2fcef4920e8b2293b7a5b70122704c.jpg">
+        <h3>Follow Train Etiquette</h3>
+      </div>
+
+      <div class="tip-card" onclick="openModal(8)">
+        <img src="https://i.pinimg.com/736x/d8/91/6c/d8916c59406a4295dedbbe2b5622ed71.jpg">
+        <h3>Plan Ahead</h3>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <footer>
     <p>© 2025 JapanEase. All Rights Reserved.</p>
     <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
-    <p>
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">Twitter</a>
-    </p>
   </footer>
+
+  <script>
+    const tips = [
+      {
+        title: "Carry Cash",
+        text: "Many small shops, temples, and local restaurants in Japan still prefer cash payments. Always keep yen on hand."
+      },
+      {
+        title: "Learn Basic Phrases",
+        text: "Knowing simple Japanese phrases like 'arigatou' and 'sumimasen' goes a long way in showing respect."
+      },
+      {
+        title: "Respect Local Etiquette",
+        text: "Japanese culture values politeness, quietness, and respect for others, especially in public places."
+      },
+      {
+        title: "Use Public Transport",
+        text: "Japan’s train system is efficient, clean, and reliable. Get an IC card for easy travel."
+      },
+      {
+        title: "Stay Connected",
+        text: "Rent a pocket WiFi or buy a SIM card to easily navigate and communicate during your trip."
+      },
+      {
+        title: "Mind the Trash Rules",
+        text: "Trash bins are rare in Japan. Carry a small bag for your trash and dispose of it properly."
+      },
+      {
+        title: "Be Punctual",
+        text: "Trains and appointments run on time. Being late is considered disrespectful."
+      },
+      {
+        title: "Follow Train Etiquette",
+        text: "Keep conversations quiet, avoid phone calls, and stand on the correct side of the platform."
+      },
+      {
+        title: "Plan Ahead",
+        text: "Popular attractions can get crowded. Planning your itinerary helps maximize your time."
+      }
+    ];
+
+    function openModal(index) {
+      document.getElementById("modal-title").textContent = tips[index].title;
+      document.getElementById("modal-text").textContent = tips[index].text;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
