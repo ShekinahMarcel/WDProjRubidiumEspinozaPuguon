@@ -5,32 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="JapanEase - A Beginner’s Guide to Japan. Discover Japan’s culture, travel tips, food, and must-visit destinations.">
   <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
-  <link rel="icon" type="image/png" href="images/WEBSITEICON.png">
+  <link rel="icon" type="image/png" href="WEBSITEICON.png">
   <title>JapanEase | A Beginner’s Guide to Japan</title>
-  
+
   <style>
-    header h1 {
-      color: #e63946;
+    :root {
+      --autumn-red: #b63e2e;
+      --autumn-orange: #d87c3f;
+      --autumn-light: #f6e7d8;
+      --autumn-dark: #3c2415;
+      --autumn-brown: #8a5a44;
     }
 
-    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #a8dadc;
-      color: #1d3557;
+      background-color: var(--autumn-light);
+      color: var(--autumn-dark);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background-color: #e63946;
-      color: #f1faee;
+      background-color: var(--autumn-red);
+      color: var(--autumn-red);
       text-align: center;
       padding: 50px 20px;
       position: relative;
-      background: url('images/JAPANBACKGROUND.jpg') center/cover no-repeat;
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
     }
 
     header img.logo {
@@ -41,21 +44,25 @@
       height: 70px;
     }
 
+    header h1 {
+      color: var(--autumn-dark);
+    }
+
     nav {
-      background-color: #1d3557;
+      background-color: var(--autumn-brown);
       text-align: center;
       padding: 12px 0;
     }
 
     nav a {
-      color: #f1faee;
+      color: var(--autumn-light);
       text-decoration: none;
       font-weight: bold;
       margin: 0 12px;
     }
 
     nav a:hover {
-      color: #a8dadc;
+      color: var(--autumn-orange);
     }
 
     main {
@@ -63,31 +70,30 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
+<<<<<<< HEAD
       padding: 60px 20px;
       background: url('images/BACKGROUND.jpg') center/cover no-repeat;
+=======
+      padding: 40px 20px;
+      background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
+      min-height: 100vh;
+>>>>>>> 8d53c730b1631ec9fe8067c3d4d18e48d76e1f96
     }
 
     section {
-      background-color: #f1faee;
+      background: rgba(0, 0, 0, 0.4); 
+      color: white;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       flex: 1 1 350px;
       max-width: 500px;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    h3 {
-      margin-top: 0;
-    }
-
-    .heart {
-      font-size: 24px;
-      color: gray;
-      cursor: pointer;
-    }
-
-    .heart:hover {
-      color: #e63946;
+    section:hover {
+      transform: translateY(-8px);
+      background: rgba(0, 0, 0, 0.6);
     }
 
 .heart {
@@ -108,8 +114,8 @@
 
 
     footer {
-      background-color: #457b9d;
-      color: #f1faee;
+      background-color: var(--autumn-brown);
+      color: var(--autumn-light);
       text-align: center;
       padding: 20px;
       font-size: 14px;
@@ -117,15 +123,17 @@
     }
 
     footer a {
-      color: #f1faee;
+      color: var(--autumn-light);
       text-decoration: none;
       margin: 0 8px;
     }
 
     footer a:hover {
+      color: var(--autumn-orange);
       text-decoration: underline;
     }
 
+<<<<<<< HEAD
   
 .welcome-link {
   text-decoration: none;
@@ -163,10 +171,24 @@
 }
 
   </style>
+=======
+    .heart {
+      font-size: 24px;
+      color: #ffb199;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .heart:hover {
+      color: var(--autumn-red);
+    }
+  .heart.active { color: var(--autumn-red); }
+    </style>
+>>>>>>> 8d53c730b1631ec9fe8067c3d4d18e48d76e1f96
 </head>
 <body>
   <header>
-    <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
+    <img src="WEBSITEICON.png" alt="JapanEase Logo" class="logo">
     <h1>JapanEase</h1>
     <h2>A Beginner’s Guide to Japan</h2>
   </header>
@@ -176,11 +198,16 @@
     <a href="itinerary.html">Itinerary</a>
     <a href="foodguide.html">Food Guide</a>
     <a href="traveltips.html">Travel Tips</a>
+<<<<<<< HEAD
     <a href="souvenirs.html">Souvenirs</a>
+=======
+    <a href="souvenir.html">Souvenirs</a>
+>>>>>>> 8d53c730b1631ec9fe8067c3d4d18e48d76e1f96
     <a href="aboutus.html">About Us</a>
   </nav>
 
   <main>
+<<<<<<< HEAD
 <a href="welcome.html" target="_blank" class="welcome-link">
   <section class="welcome-section">
     <h3>Welcome to JapanEase</h3>
@@ -192,6 +219,15 @@
     </p>
   </section>
 </a>
+=======
+    <section>
+      <h3>Welcome to JapanEase</h3>
+      <p>
+        Japan is one of the most visited countries in the world, known for its rich culture, traditions, and modern wonders.<br>
+        This guide helps travelers plan their trip, find must-see spots, and make their journey across Japan unforgettable.
+      </p>
+    </section>
+>>>>>>> 8d53c730b1631ec9fe8067c3d4d18e48d76e1f96
 
     <section>
       <h3>Featured Cities</h3>
@@ -212,6 +248,7 @@
       <a href="#">Twitter</a>
     </p>
   </footer>
+<<<<<<< HEAD
   <script>
   document.querySelectorAll('.heart').forEach(heart => {
     heart.addEventListener('click', () => {
@@ -220,7 +257,15 @@
     });
   });
 </script>
+=======
+<script>
+    const hearts = document.querySelectorAll('.heart');
+    hearts.forEach(h => {
+      h.addEventListener('click', () => {
+        h.classList.toggle('active');
+      });
+    });
+  </script>
+>>>>>>> 8d53c730b1631ec9fe8067c3d4d18e48d76e1f96
 </body>
 </html>
-
-
