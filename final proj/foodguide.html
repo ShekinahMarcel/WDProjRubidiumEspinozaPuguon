@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JapanEase - A Beginner’s Guide to Japan. Discover Japan’s culture, travel tips, food, and must-visit destinations.">
+  <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
+  <link rel="icon" type="image/png" href="WEBSITEICON.png">
+  <title>JapanEase | A Beginner’s Guide to Japan</title>
+  <style>
+    :root {
+      --autumn-red: #b63e2e;
+      --autumn-orange: #d87c3f;
+      --autumn-light: #f6e7d8;
+      --autumn-dark: #3c2415;
+      --autumn-brown: #8a5a44;
+    }
+    
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--autumn-light);
+      color: var(--autumn-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--autumn-red);
+      color: var(--autumn-red);
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 70px;
+      height: 70px;
+    }
+
+    header h1 {
+      color: var(--autumn-dark);
+    }
+
+    nav {
+      background-color: var(--autumn-brown);
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      color: var(--autumn-orange);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+      background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
+      min-height: 100vh;
+    }
+
+    section {
+      background-color: #f1faee;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 350px;
+      max-width: 500px;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .heart {
+      font-size: 24px;
+      color: gray;
+      cursor: pointer;
+    }
+
+    .heart:hover {
+      color: #e63946;
+    }
+
+    footer {
+      background-color: var(--autumn-brown);
+      color: var(--autumn-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: var(--autumn-orange);
+      text-decoration: underline;
+    }
+
+
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background-color: #f1faee;         
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;               
+  display: block;
+}
+
+.card h4 {
+  margin: 15px 0 5px;
+  color: #1d3557;
+}
+
+.card p {
+  padding: 0 10px 15px;
+  color: #457b9d;
+}
+  </style>
+  </head>
+<body>
+  <header>
+    <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
+    <h1>JapanEase</h1>
+    <h2>A Beginner’s Guide to Japan</h2>
+  </header>
+
+  <nav>
+    <a href="final.html">Home</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a href="foodguide.html">Food Guide</a>
+    <a href="traveltips.html">Travel Tips</a>
+    <a href="souvenirs.html">Souvenirs</a>
+    <a href="aboutus.html">About Us</a>
+  </nav>
+
+    <main>
+  <section style="max-width: 1100px; background-color: rgba(246,231,216,0.95);">
+    <h2 style="text-align:center; font-size:36px; margin-bottom:10px;">
+      Japanese Food Guide
+    </h2>
+    <p style="text-align:center; font-size:16px; margin-bottom:30px;">
+      Essential dishes every beginner should try when visiting Japan
+    </p>
+
+    <div class="gallery">
+
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/4c/3b/6b/4c3b6bdfc3d46f0c2fcbf6d6a5a0bb9b.jpg" alt="Ramen">
+        <h4>Ramen</h4>
+        <p>
+          A flavorful noodle soup with rich broth, wheat noodles, and toppings
+          like pork, egg, and seaweed. Each region has its own style.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/ef/97/52/ef9752e0d7b4c66c8b5f4d6eab4c62b6.jpg" alt="Sushi">
+        <h4>Sushi</h4>
+        <p>
+          Vinegared rice paired with fresh seafood or vegetables. Ranges from
+          casual conveyor-belt sushi to high-end dining.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/ab/28/2c/ab282c1b70d8b8d37a6fbc5b2f18db18.jpg" alt="Bento">
+        <h4>Bento</h4>
+        <p>
+          A boxed meal with rice, meat or fish, and vegetables. Affordable,
+          convenient, and perfect for travelers.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/3e/8f/4b/3e8f4b8b52df5a91c4b6c5c24d9cf3d3.jpg" alt="Takoyaki">
+        <h4>Takoyaki</h4>
+        <p>
+          Ball-shaped street food filled with octopus, commonly found at festivals
+          and night markets, especially in Osaka.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/6e/5f/52/6e5f523b4f8e0cb15c4c6f8b90a3c59f.jpg" alt="Tempura">
+        <h4>Tempura</h4>
+        <p>
+          Lightly battered and deep-fried seafood or vegetables. Crispy, not greasy,
+          and usually served with dipping sauce.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/72/87/61/728761bfc88f5a5c2b1f41b7b13d75e4.jpg" alt="Japanese Sweets">
+        <h4>Japanese Sweets</h4>
+        <p>
+          Traditional desserts like mochi and dango, often made with rice and red
+          bean paste and less sweet than Western desserts.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+    <footer>
+    <p>© 2025 JapanEase. All Rights Reserved.</p>
+    <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
+    <p>
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
+
+

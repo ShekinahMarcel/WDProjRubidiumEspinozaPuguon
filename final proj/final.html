@@ -63,7 +63,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      padding: 40px 20px;
+      padding: 60px 20px;
       background: url('images/BACKGROUND.jpg') center/cover no-repeat;
     }
 
@@ -90,6 +90,23 @@
       color: #e63946;
     }
 
+.heart {
+  font-size: 26px;
+  color: #adb5bd;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.heart.filled {
+  color: #e63946;
+}
+
+.heart:active {
+  transform: scale(1.2);
+}
+
+
     footer {
       background-color: #457b9d;
       color: #f1faee;
@@ -108,6 +125,43 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+  
+.welcome-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.welcome-section {
+  background: linear-gradient(135deg, #e63946, #f1faee);
+  color: #1d3557;
+  padding: 40px;
+  border-radius: 18px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-section h3 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.welcome-section::after {
+  content: "Click to learn more →";
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.welcome-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
   </style>
 </head>
 <body>
@@ -120,20 +174,24 @@
   <nav>
     <a href="final.html">Home</a>
     <a href="itinerary.html">Itinerary</a>
-    <a href="#">Food Guide</a>
-    <a href="#">Travel Tips</a>
-    <a href="#">Souvenirs</a>
-    <a href="#">About Us</a>
+    <a href="foodguide.html">Food Guide</a>
+    <a href="traveltips.html">Travel Tips</a>
+    <a href="souvenirs.html">Souvenirs</a>
+    <a href="aboutus.html">About Us</a>
   </nav>
 
   <main>
-    <section>
-      <h3>Welcome to JapanEase</h3>
-      <p>
-        Japan is one of the most visited countries in the world, known for its rich culture, traditions, and modern wonders.  
-        This guide helps travelers plan their trip, find must-see spots, and make their journey across Japan unforgettable.
-      </p>
-    </section>
+<a href="welcome.html" target="_blank" class="welcome-link">
+  <section class="welcome-section">
+    <h3>Welcome to JapanEase</h3>
+    <p>
+      Japan is one of the most visited countries in the world, known for its rich culture,
+      traditions, and modern wonders.
+      This guide helps travelers plan their trip, find must-see spots, and make their journey
+      across Japan unforgettable.
+    </p>
+  </section>
+</a>
 
     <section>
       <h3>Featured Cities</h3>
@@ -154,6 +212,14 @@
       <a href="#">Twitter</a>
     </p>
   </footer>
+  <script>
+  document.querySelectorAll('.heart').forEach(heart => {
+    heart.addEventListener('click', () => {
+      heart.classList.toggle('filled');
+      heart.textContent = heart.classList.contains('filled') ? '♥' : '♡';
+    });
+  });
+</script>
 </body>
 </html>
 

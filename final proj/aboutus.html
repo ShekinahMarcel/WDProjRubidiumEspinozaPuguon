@@ -7,8 +7,9 @@
   <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
   <link rel="icon" type="image/png" href="images/WEBSITEICON.png">
   <title>JapanEase | A Beginner’s Guide to Japan</title>
+  
   <style>
-    header h1 {
+     header h1 {
       color: #e63946;
     }
 
@@ -57,37 +58,59 @@
       color: #a8dadc;
     }
 
-    main {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px 20px;
-      background: url('images/BACKGROUND.jpg') center/cover no-repeat;
-    }
+/* About Us page styles */
+.about-section {
+  background-color: rgba(255, 241, 230, 0.95);
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 16px;
+}
 
-    section {
-      background-color: #f1faee;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 350px;
-      max-width: 500px;
-    }
+.about-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #6a040f;
+}
 
-    h3 {
-      margin-top: 0;
-    }
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
 
-    .heart {
-      font-size: 24px;
-      color: gray;
-      cursor: pointer;
-    }
+.about-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+}
 
-    .heart:hover {
-      color: #e63946;
-    }
+.about-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.about-card h4 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #9d0208;
+}
+
+.about-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3d405b;
+}
+
 
     footer {
       background-color: #457b9d;
@@ -108,46 +131,14 @@
       text-decoration: underline;
     }
 
-    .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px;
-  padding: 30px;
-}
-
-.card {
-  background-color: #f1faee;         
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  overflow: hidden;
-  text-align: center;
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;               
-  display: block;
-}
-
-.card h4 {
-  margin: 15px 0 5px;
-  color: #1d3557;
-}
-
-.card p {
-  padding: 0 10px 15px;
-  color: #457b9d;
-}
-  </style>
-</head>
-<body>
+     </style>
+    </head>
+    <body>
   <header>
     <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
     <h1>JapanEase</h1>
     <h2>A Beginner’s Guide to Japan</h2>
   </header>
-
   <nav>
     <a href="final.html">Home</a>
     <a href="itinerary.html">Itinerary</a>
@@ -157,43 +148,47 @@
     <a href="aboutus.html">About Us</a>
   </nav>
 
-<div class="gallery">
-  <div class="card">
-    <img src="https://www.travelcaffeine.com/wp-content/uploads/2018/08/kinopio-cafe-toad-restaurant-super-nintendo-world-universal-studios-japan-osaka-532.jpg" alt="Osaka">
-    <h4>Universal Studios</h4>
-    <p>heh dattebayo fellas!</p>
-  </div>
+<main>
+  <section class="about-section">
+    <h2>Meet the Creators</h2>
 
-  <div class="card">
-    <img src="https://i.pinimg.com/736x/4d/49/2d/4d492dcb340cae11a8d6040efe147562.jpg" alt="Osaka, Japan">
-    <h4>Dotonbori</h4>
-    <p>arigato gozaimas!! or soemthing.</p>
-  </div>
+    <div class="about-gallery">
 
-  <div class="card">
-    <img src="https://i.pinimg.com/1200x/31/43/e5/3143e59dcc79a813a1c3ea555ce6c908.jpg" alt="Sample 3">
-    <h4>Umeda Sky Building</h4>
-    <p>i want to selep.</p>
-  </div>
+      <!-- Card 1: description -->
+      <div class="about-card">
+        <p>
+          Alijah Lucas Espinoza is passionate about Japanese culture and
+          wanted to create a beginner-friendly guide for travelers
+          interested in Japan’s unique traditions and food.
+        </p>
+      </div>
 
-  <div class="card">
-    <img src="https://i.pinimg.com/1200x/e3/63/8e/e3638ec4c03c6937bd8c3f0fc728a6f7.jpg" alt="Sample 4">
-    <h4>Shibuya</h4>
-    <p>konnichhiwa.</p>
-  </div>
+      <!-- Card 2: photo + name -->
+      <div class="about-card">
+        <img src="images/alijah.jpg" alt="Alijah Lucas Espinoza">
+        <h4>Alijah Lucas Espinoza</h4>
+      </div>
 
-  <div class="card">
-    <img src="https://i.pinimg.com/474x/ba/ea/f4/baeaf4aa62470c817d866c1ef2b27013.jpg" alt="Sample 5">
-    <h4>Ueno Park</h4>
-    <p>amanai...</p>
-  </div>
+      <!-- Card 3: photo + name -->
+      <div class="about-card">
+        <img src="images/shekinah.jpg" alt="Shekinah Marcel Puguon">
+        <h4>Shekinah Marcel Puguon</h4>
+      </div>
 
-  <div class="card">
-    <img src="https://i.pinimg.com/736x/6b/af/82/6baf82a13e033ea564cf9598dde9d9c2.jpg" alt="Sample 6">
-    <h4>Senso-ji</h4>
-    <p>i want to watch jjk again </p>
-  </div>
-</div>
+      <!-- Card 4: description -->
+      <div class="about-card">
+        <p>
+          Shekinah Marcel Puguon has always admired Japan’s blend of
+          tradition and modernity, and joined this project to help
+          beginners navigate Japan with ease and confidence.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+
   <footer>
     <p>© 2025 JapanEase. All Rights Reserved.</p>
     <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
@@ -205,4 +200,3 @@
   </footer>
 </body>
 </html>
-
