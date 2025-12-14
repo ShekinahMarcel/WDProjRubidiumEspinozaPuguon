@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JapanEase - A Beginner’s Guide to Japan. Discover Japan’s culture, travel tips, food, and must-visit destinations.">
+  <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
+  <link rel="icon" type="image/png" href="WEBSITEICON.png">
+  <title>JapanEase | A Beginner’s Guide to Japan</title>
+
+  <style>
+    :root {
+      --autumn-red: #b63e2e;
+      --autumn-orange: #d87c3f;
+      --autumn-light: #f6e7d8;
+      --autumn-dark: #3c2415;
+      --autumn-brown: #8a5a44;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--autumn-light);
+      color: var(--autumn-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
+      color: var(--autumn-dark);
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 70px;
+      height: 70px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--autumn-dark);
+    }
+
+    header h2 {
+      margin: 8px 0 0;
+      font-size: 22px;
+      color: var(--autumn-dark);
+    }
+
+    nav {
+      background-color: var(--autumn-brown);
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      color: var(--autumn-orange);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 60px 20px;
+      background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
+    }
+
+    .interactive-card {
+      background-color: var(--autumn-light);
+      border-radius: 18px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+      max-width: 500px;
+      flex: 1 1 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .interactive-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .interactive-card h3 {
+      margin: 15px 0 10px;
+      color: var(--autumn-dark);
+      font-size: 28px;
+    }
+
+    .interactive-card p {
+      padding: 0 15px 20px;
+      color: var(--autumn-dark);
+      font-size: 16px;
+    }
+
+    .interactive-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    section {
+      background: var(--autumn-brown);
+      color: var(--autumn-light);
+      padding: 25px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      flex: 1 1 350px;
+      max-width: 500px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: var(--autumn-dark);
+    }
+
+    .heart {
+      font-size: 26px;
+      color: var(--autumn-light);
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.15s ease;
+      user-select: none;
+    }
+
+    .heart.filled {
+      color: var(--autumn-orange);
+    }
+
+    .heart:active {
+      transform: scale(1.2);
+    }
+
+    footer {
+      background-color: var(--autumn-brown);
+      color: var(--autumn-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: var(--autumn-orange);
+      text-decoration: underline;
+    }
+
+    .cities-list p {
+      margin: 6px 0;
+      font-size: 18px;
+    }
+
+    .cities-list span.heart {
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
+    <h1>JapanEase</h1>
+    <h2>A Beginner’s Guide to Japan</h2>
+  </header>
+
+  <nav>
+    <a href="A_home.html">Home</a>
+    <a href="B_itinerary.html">Itinerary</a>
+    <a href="C_foodguide.html">Food Guide</a>
+    <a href="D_traveltips.html">Travel Tips</a>
+    <a href="E_souvenirs.html">Souvenirs</a>
+    <a href="F_aboutus.html">About Us</a>
+  </nav>
+
+  <main>
+    <div class="interactive-card">
+      <img src="https://i.pinimg.com/736x/71/47/8e/71478e75cd9219a365f558f5950dd35e.jpg" alt="Welcome Japan">
+      <h3>Welcome to JapanEase</h3>
+      <p>Discover the beauty of Japan interactively! Explore culture, food, travel tips, and must-see destinations with this guide. Click on the cards below to learn more about famous cities. Each destination features images, descriptions, and travel advice. Start your journey across Japan now!</p>
+    </div>
+
+    <section>
+      <h3>Featured Cities</h3>
+      <p>Explore Japan’s most famous destinations and mark your favorites:</p>
+      <div class="cities-list">
+        <p>Tokyo <span class="heart">♡</span></p>
+        <p>Kyoto <span class="heart">♡</span></p>
+        <p>Osaka <span class="heart">♡</span></p>
+        <p>Hokkaido <span class="heart">♡</span></p>
+        <p>Nara <span class="heart">♡</span></p>
+        <p>Hiroshima <span class="heart">♡</span></p>
+        <p>Fukuoka <span class="heart">♡</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 JapanEase. All Rights Reserved.</p>
+    <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
+    <p>
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.heart').forEach(heart => {
+      heart.addEventListener('click', () => {
+        heart.classList.toggle('filled');
+        heart.textContent = heart.classList.contains('filled') ? '♥' : '♡';
+      });
+    });
+  </script>
+</body>
+</html>
+

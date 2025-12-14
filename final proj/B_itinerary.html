@@ -6,7 +6,7 @@
   <title>JapanEase | A Beginner’s Guide to Japan</title>
   <link rel="icon" type="image/png" href="images/WEBSITEICON.png">
   <style>
-        :root {
+    :root {
       --autumn-red: #b63e2e;
       --autumn-orange: #d87c3f;
       --autumn-light: #f6e7d8;
@@ -17,7 +17,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: var(--autumn-light);
+      background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
       color: var(--autumn-dark);
       display: flex;
       flex-direction: column;
@@ -25,12 +25,11 @@
     }
 
     header {
-      background-color: var(--autumn-red);
-      color: var(--autumn-red);
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
+      color: var(--autumn-dark);
       text-align: center;
       padding: 50px 20px;
       position: relative;
-      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
     }
 
     header img.logo {
@@ -42,6 +41,14 @@
     }
 
     header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--autumn-dark);
+    }
+
+    header h2 {
+      margin: 8px 0 0;
+      font-size: 22px;
       color: var(--autumn-dark);
     }
 
@@ -62,15 +69,13 @@
       color: var(--autumn-orange);
     }
 
-    main {
+ main {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      padding: 40px 20px;
-      background: url('https://i.pinimg.com/736x/71/47/8e/71478e75cd9219a365f558f5950dd35e.jpg') center/cover no-repeat fixed;
-      min-height: 100vh;
-    }
+      padding: 60px 20px;
+ }
 
     .gallery {
       display: grid;
@@ -107,7 +112,7 @@
       color: #457b9d;
     }
 
-    footer {
+        footer {
       background-color: var(--autumn-brown);
       color: var(--autumn-light);
       text-align: center;
@@ -126,7 +131,6 @@
       color: var(--autumn-orange);
       text-decoration: underline;
     }
-
 
     .card-expanded {
       position: fixed;
@@ -183,18 +187,19 @@
       color: #457b9d;
     }
 
-    /* Expanded modal style */
     .card-expanded {
-      position: fixed;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #fff;
-      padding: 20px;
-      border: 2px solid #333;
-      z-index: 1000;
-      display: none;
-      max-width: 500px;
+     display: none;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: #f6e7d8;
+     color: #3c2415;
+     padding: 30px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+     max-width: 600px;
+     z-index: 1000;
     }
     .close-btn {
       float: right;
@@ -215,12 +220,12 @@
   </header>
 
   <nav>
-    <a href="final.html">Home</a>
-    <a href="itinerary.html">Itinerary</a>
-    <a href="foodguide.html">Food Guide</a>
-    <a href="traveltips.html">Travel Tips</a>
-    <a href="souvenirs.html">Souvenirs</a>
-    <a href="aboutus.html">About Us</a>
+    <a href="A_home.html">Home</a>
+    <a href="B_itinerary.html">Itinerary</a>
+    <a href="C_foodguide.html">Food Guide</a>
+    <a href="D_traveltips.html">Travel Tips</a>
+    <a href="E_souvenirs.html">Souvenirs</a>
+    <a href="F_aboutus.html">About Us</a>
   </nav>
 
   <div class="gallery">
@@ -261,41 +266,42 @@
     </div>
   </div>
 
-  <div id="expanded-1" class="card-expanded">
-    <button class="close-btn">X</button>
-    <h2>Universal Studios</h2>
-    <p>Extra details about Universal Studios in Osaka. Attractions, rides, and tips!</p>
-  </div>
+ <div id="expanded-1" class="card-expanded">
+  <button class="close-btn">X</button>
+  <h2>Universal Studios Japan</h2>
+  <p>Universal Studios Japan is located in Osaka and is one of the most popular theme parks in the country. It features attractions from famous movies and franchises like Harry Potter, Minions, and Jurassic Park. Visitors can enjoy thrilling rides, live shows, and themed dining experiences. The park is especially lively during seasonal events and festivals. Advanced ticket booking is recommended to avoid long queues.</p>
+</div>
 
-  <div id="expanded-2" class="card-expanded">
-    <button class="close-btn">X</button>
-    <h2>Dotonbori</h2>
-    <p>Extra details about Dotonbori street food and nightlife.</p>
-  </div>
+<div id="expanded-2" class="card-expanded">
+  <button class="close-btn">X</button>
+  <h2>Dotonbori</h2>
+  <p>Dotonbori is a bustling street in Osaka famous for its neon lights and iconic Glico man sign. The area is a food lover's paradise, offering local specialties like takoyaki, okonomiyaki, and kushikatsu. Visitors can stroll along the canal and enjoy shopping at various boutiques and souvenir shops. Nighttime is the best for photography because of the vibrant lights reflecting on the water. The area is easily accessible by public transport and always lively.</p>
+</div>
 
-  <div id="expanded-3" class="card-expanded">
-    <button class="close-btn">X</button>
-    <h2>Umeda Sky Building</h2>
-    <p>Extra details about Umeda Sky Building observation deck.</p>
-  </div>
+<div id="expanded-3" class="card-expanded">
+  <button class="close-btn">X</button>
+  <h2>Umeda Sky Building</h2>
+  <p>The Umeda Sky Building is an architectural landmark in Osaka with a striking rooftop observatory. Visitors can enjoy a panoramic 360-degree view of the city from the Floating Garden Observatory. The building also features restaurants, cafes, and shops on lower floors. It's a popular spot for photography, especially during sunset or at night. The nearby streets are great for exploring local eateries and entertainment options.</p>
+</div>
 
-  <div id="expanded-4" class="card-expanded">
-    <button class="close-btn">X</button>
-    <h2>Shibuya</h2>
-    <p>Extra details about Shibuya crossing and shopping.</p>
-  </div>
+<div id="expanded-4" class="card-expanded">
+  <button class="close-btn">X</button>
+  <h2>Shibuya</h2>
+  <p>Shibuya is one of Tokyo’s most iconic districts, known worldwide for the Shibuya Crossing. It’s a hub for shopping, dining, and youth culture with countless fashion stores and entertainment venues. Landmarks like Hachiko Statue and Shibuya Scramble Square are must-see attractions. The area is particularly vibrant in the evening when neon signs illuminate the streets. Shibuya offers both modern experiences and traditional Japanese dining in its side streets.</p>
+</div>
 
-  <div id="expanded-5" class="card-expanded">
-    <button class="close-btn">X</button>
-    <h2>Ueno Park</h2>
-    <p>Extra details about Ueno Park and cherry blossoms.</p>
-  </div>
+<div id="expanded-5" class="card-expanded">
+  <button class="close-btn">X</button>
+  <h2>Ueno Park</h2>
+  <p>Ueno Park in Tokyo is famous for its museums, zoo, and seasonal cherry blossoms. The park covers a large area and includes the Tokyo National Museum and Ueno Zoo. Visitors can stroll along tree-lined paths, enjoy paddle boating on the pond, or relax on the grassy areas. It becomes especially crowded during spring when cherry blossoms bloom. Ueno Park combines cultural attractions, natural beauty, and leisure activities all in one location.</p>
+</div>
 
-  <div id="expanded-6" class="card-expanded">
-    <button class="close-btn">X</button>
-    <h2>Senso-ji</h2>
-    <p>Extra details about Senso-ji temple in Asakusa.</p>
-  </div>
+<div id="expanded-6" class="card-expanded">
+  <button class="close-btn">X</button>
+  <h2>Senso-ji Temple</h2>
+  <p>Senso-ji is Tokyo’s oldest temple, located in the historic Asakusa district. The temple is famous for its large red Kaminarimon gate and bustling Nakamise shopping street. Visitors can experience traditional rituals, buy charms, and explore local souvenir shops. The temple grounds are beautifully decorated during festivals such as Sanja Matsuri. Senso-ji offers a deep cultural experience blending spirituality, history, and vibrant street life.</p>
+</div>
+
 
   <footer>
     <p>© 2025 JapanEase. All Rights Reserved.</p>
@@ -307,6 +313,6 @@
     </p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="Itineraryscript.js"></script>
 </body>
 </html>

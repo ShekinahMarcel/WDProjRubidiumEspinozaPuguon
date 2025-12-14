@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JapanEase - Souvenirs From Japan">
+<meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
+<link rel="icon" type="image/png" href="images/WEBSITEICON.png">
+<title>JapanEase | Souvenirs</title>
+
+<style>
+:root {
+      --autumn-red: #b63e2e;
+      --autumn-orange: #d87c3f;
+      --autumn-light: #f6e7d8;
+      --autumn-dark: #3c2415;
+      --autumn-brown: #8a5a44;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--autumn-light);
+      color: var(--autumn-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
+      color: var(--autumn-dark);
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 70px;
+      height: 70px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--autumn-dark);
+    }
+
+    header h2 {
+      margin: 8px 0 0;
+      font-size: 22px;
+      color: var(--autumn-dark);
+    }
+
+nav {
+  background-color: var(--autumn-brown);
+  text-align: center;
+  padding: 12px 0;
+}
+
+nav a {
+  color: var(--autumn-light);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 12px;
+}
+
+nav a:hover {
+  color: var(--autumn-orange);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+  background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+section {
+  background: rgba(0, 0, 0, 0.4); 
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  flex: 1 1 350px;
+  max-width: 500px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-8px);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+footer {
+  background-color: var(--autumn-brown);
+  color: var(--autumn-light);
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--autumn-light);
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  color: var(--autumn-orange);
+  text-decoration: underline;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;        
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.item-row img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-desc h4 {
+  margin: 0 0 10px;
+  color: #1d3557;
+}
+
+.item-desc p {
+  margin: 0;
+  color: #457b9d;
+}
+
+@media(max-width: 600px) {
+  .item-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .item-row img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.item-expanded {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f6e7d8;
+  color: #3c2415;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  max-width: 600px;
+  z-index: 1000;
+}
+.item-expanded button {
+  float: right;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
+  <h1>JapanEase</h1>
+  <h2>A Beginner’s Guide to Japan</h2>
+</header>
+
+<nav>
+  <a href="A_home.html">Home</a>
+  <a href="B_itinerary.html">Itinerary</a>
+  <a href="C_foodguide.html">Food Guide</a>
+  <a href="D_traveltips.html">Travel Tips</a>
+  <a href="E_souvenirs.html">Souvenirs</a>
+  <a href="F_aboutus.html">About Us</a>
+</nav>
+
+<main>
+
+<section>
+  <h2>Food</h2>
+
+  <div class="item-row" data-item="1">
+    <img src="https://m.media-amazon.com/images/I/A1mLnDrUnFL.jpg" alt="Kitkat">
+    <div class="item-desc">
+      <h4>Kitkat Japanese Flavors</h4>
+      <p>Unique flavors like matcha, sake, and strawberry, perfect for gifts or tasting Japan.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="2">
+    <img src="https://japanshopping.org/files/itemcontents/-_2022-05-30-074503.png" alt="Sake">
+    <div class="item-desc">
+      <h4>Japanese Sake</h4>
+      <p>Traditional rice wine in beautiful bottles, often a cultural gift for adults.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="3">
+    <img src="https://i.pinimg.com/1200x/55/b4/58/55b458e5556a33015ef477c4202ca723.jpg" alt="Dango">
+    <div class="item-desc">
+      <h4>Dango</h4>
+      <p>Sweet rice dumplings on skewers, a popular festival snack and souvenir.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="4">
+    <img src="https://i.pinimg.com/736x/28/60/ca/2860ca91b33166a28ca26cc978847200.jpg" alt="Senbei Rice Crackers">
+    <div class="item-desc">
+      <h4>Senbei Rice Crackers</h4>
+      <p>Crispy traditional rice crackers available in savory or sweet flavors.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="5">
+    <img src="https://i.pinimg.com/1200x/e0/1f/ff/e01fffb5c53a2301601c949d7d043ac7.jpg" alt="Yokan">
+    <div class="item-desc">
+      <h4>Yokan</h4>
+      <p>Sweet jellied dessert made from red bean paste, elegant and giftable.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="6">
+    <img src="https://i.pinimg.com/736x/7e/a4/51/7ea451c8b1102bf75d9997a6b91fad3f.jpg" alt="Hokkaido Cheese Tart">
+    <div class="item-desc">
+      <h4>Hokkaido Cheese Tart</h4>
+      <p>Delicious creamy tarts famous for Hokkaido dairy, a must-try snack.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Lifestyle & Home</h2>
+
+  <div class="item-row" data-item="7">
+    <img src="https://en-chatelaine.mblycdn.com/ench/resized/2021/12/1600x1200/furoshiki-social-reusable-wrapping.jpg" alt="Furoshiki">
+    <div class="item-desc">
+      <h4>Furoshiki</h4>
+      <p>Traditional Japanese wrapping cloths used for gifts or eco-friendly packaging.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="8">
+    <img src="https://kokeshidoll.org/wp-content/uploads/2024/06/IMG_6984_low.jpg" alt="Kokeshi Doll">
+    <div class="item-desc">
+      <h4>Kokeshi Doll</h4>
+      <p>Handcrafted wooden dolls with painted designs, symbolic and decorative.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="9">
+    <img src="https://cdn.shopify.com/s/files/1/1610/3863/files/Kutani_Ware_Porcelain_Maneki_Neko_Pair_Figurine_3.5-Go_HG8A8530.webp?v=1704244553" alt="Maneki Neko">
+    <div class="item-desc">
+      <h4>Maneki Neko</h4>
+      <p>The lucky cat figurine believed to bring good fortune to homes and shops.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="10">
+    <img src="https://images.squarespace-cdn.com/content/v1/58fd82dbbf629ab224f81b68/1661667761984-RFXJW1T19JI0K23LN2T1/Red-Clay-Teapot.jpg" alt="Japanese Teapot">
+    <div class="item-desc">
+      <h4>Kyusu Teapot</h4>
+      <p>Traditional Japanese teapot, ideal for brewing green tea elegantly at home.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="11">
+    <img src="https://i.pinimg.com/474x/32/c4/db/32c4db2c546a7f99af97d7eba72ad8bc.jpg" alt="Chopsticks">
+    <div class="item-desc">
+      <h4>Decorative Chopsticks</h4>
+      <p>Beautifully designed chopsticks, perfect as gifts or for home dining.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Beauty & Self-Care</h2>
+
+  <div class="item-row" data-item="12">
+    <img src="https://img.lazcdn.com/g/p/a678f5052b5cb0b81a8e16a7469ee860.jpg_720x720q80.jpg" alt="Japanese Skincare">
+    <div class="item-desc">
+      <h4>Japanese Skincare Set</h4>
+      <p>High-quality skincare products including masks, lotions, and creams.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="13">
+    <img src="https://i.ebayimg.com/images/g/4uQAAeSw5PRoizI~/s-l400.jpg" alt="Bath Salts">
+    <div class="item-desc">
+      <h4>Onsen Bath Salts</h4>
+      <p>Relaxing bath salts inspired by Japanese hot springs, soothing and fragrant.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="14">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZq9hrQCb6zrOksKDSUIV2L9tJz48i_0tl2Q&s" alt="Japanese Hand Cream">
+      <h4>Japanese Hand Cream</h4>
+      <p>Moisturizing hand creams with traditional Japanese scents like cherry blossom.</p>
+    </div>
+  </div>
+
+  <div class="item-row" data-item="15">
+    <img src="https://images.squarespace-cdn.com/content/v1/5eb8df4ad4280a6eb9c4edb2/1724229347517-AYO8TUQEDQCTBRNJAICK/KOSECLEARTURNSorryBareSkinMask_7sheets_-1.jpeg" alt="Face Mask">
+    <div class="item-desc">
+      <h4>Sheet Masks</h4>
+      <p>Popular facial sheet masks with natural ingredients for soft, glowing skin.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="expanded-1" class="item-expanded"><button class="close-btn">X</button><h2>Kitkat Japanese Flavors</h2><p>Kitkat in Japan comes in unique regional flavors such as matcha green tea, sake, strawberry cheesecake, and sweet potato. They make for perfect souvenirs or gifts, and some special editions are only sold in certain prefectures. Try sampling a few for a fun culinary experience.</p></div>
+<div id="expanded-2" class="item-expanded"><button class="close-btn">X</button><h2>Japanese Sake</h2><p>Japanese sake is a traditional rice wine available in a variety of flavors and styles. Many come in beautifully designed bottles, making them excellent cultural gifts. Premium sake is best enjoyed chilled or warmed depending on the type.</p></div>
+<div id="expanded-3" class="item-expanded"><button class="close-btn">X</button><h2>Dango</h2><p>Dango are sweet rice dumplings often served on skewers. They are a common festival snack and a popular souvenir item. Variants include mitarashi (sweet soy glaze) and anko (red bean paste).</p></div>
+<div id="expanded-4" class="item-expanded"><button class="close-btn">X</button><h2>Senbei Rice Crackers</h2><p>Senbei are traditional Japanese rice crackers, crispy and often savory, though sweet varieties exist. They are commonly packaged beautifully, making them great gifts.</p></div>
+<div id="expanded-5" class="item-expanded"><button class="close-btn">X</button><h2>Yokan</h2><p>Yokan is a sweet, jellied dessert made from red bean paste, agar, and sugar. Elegant and giftable, yokan is often presented in decorative boxes.</p></div>
+<div id="expanded-6" class="item-expanded"><button class="close-btn">X</button><h2>Hokkaido Cheese Tart</h2><p>Hokkaido Cheese Tarts are creamy, sweet tarts made using Hokkaido dairy. They are famous as a souvenir snack and are loved for their rich, smooth texture.</p></div>
+<div id="expanded-7" class="item-expanded"><button class="close-btn">X</button><h2>Furoshiki</h2><p>Furoshiki are traditional Japanese wrapping cloths used to wrap gifts, carry items, or as eco-friendly packaging alternatives. They come in beautiful patterns and sizes.</p></div>
+<div id="expanded-8" class="item-expanded"><button class="close-btn">X</button><h2>Kokeshi Doll</h2><p>Kokeshi dolls are handcrafted wooden dolls with painted designs. They are symbolic and decorative, often used as cultural souvenirs.</p></div>
+<div id="expanded-9" class="item-expanded"><button class="close-btn">X</button><h2>Maneki Neko</h2><p>The Maneki Neko, or lucky cat, is a figurine believed to bring good fortune to homes and shops. It is often displayed near entrances.</p></div>
+<div id="expanded-10" class="item-expanded"><button class="close-btn">X</button><h2>Kyusu Teapot</h2><p>Kyusu are traditional Japanese teapots, usually made of clay. Ideal for brewing green tea elegantly at home, they enhance the flavor and aroma of tea.</p></div>
+<div id="expanded-11" class="item-expanded"><button class="close-btn">X</button><h2>Decorative Chopsticks</h2><p>Beautifully designed chopsticks, often lacquered or painted. Perfect as gifts or for traditional Japanese dining experiences at home.</p></div>
+<div id="expanded-12" class="item-expanded"><button class="close-btn">X</button><h2>Japanese Skincare Set</h2><p>Japanese skincare sets include high-quality masks, lotions, creams, and serums. Known for their gentle yet effective formulas, they are great souvenirs.</p></div>
+<div id="expanded-13" class="item-expanded"><button class="close-btn">X</button><h2>Onsen Bath Salts</h2><p>Bath salts inspired by Japanese onsen hot springs. They are fragrant, relaxing, and perfect for a soothing bath at home.</p></div>
+<div id="expanded-14" class="item-expanded"><button class="close-btn">X</button><h2>Japanese Hand Cream</h2><p>Moisturizing hand creams with traditional Japanese scents such as cherry blossom or yuzu. They keep hands soft and are often beautifully packaged.</p></div>
+<div id="expanded-15" class="item-expanded"><button class="close-btn">X</button><h2>Sheet Masks</h2><p>Japanese sheet masks use natural ingredients for skin hydration and glow. Popular for daily skincare and gifting.</p></div>
+
+<footer>
+  <p>© 2025 JapanEase. All Rights Reserved.</p>
+  <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
+  <p>
+    <a href="#">Facebook</a> |
+    <a href="#">Instagram</a> |
+    <a href="#">Twitter</a>
+  </p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var items = document.querySelectorAll('.item-row');
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var id = this.dataset.item;
+      var expanded = document.getElementById('expanded-' + id);
+      if (expanded) expanded.style.display = 'block';
+    });
+  });
+
+  var closeBtns = document.querySelectorAll('.close-btn');
+  closeBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.parentElement.style.display = 'none';
+    });
+  });
+});
+</script>
+
+</body>
+</html>

@@ -15,7 +15,6 @@
       --autumn-dark: #3c2415;
       --autumn-brown: #8a5a44;
     }
-    
 
     body {
       margin: 0;
@@ -28,12 +27,11 @@
     }
 
     header {
-      background-color: var(--autumn-red);
-      color: var(--autumn-red);
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
+      color: var(--autumn-dark);
       text-align: center;
       padding: 50px 20px;
       position: relative;
-      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
     }
 
     header img.logo {
@@ -45,6 +43,14 @@
     }
 
     header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--autumn-dark);
+    }
+
+    header h2 {
+      margin: 8px 0 0;
+      font-size: 22px;
       color: var(--autumn-dark);
     }
 
@@ -160,12 +166,12 @@
   </header>
 
   <nav>
-    <a href="final.html">Home</a>
-    <a href="itinerary.html">Itinerary</a>
-    <a href="foodguide.html">Food Guide</a>
-    <a href="traveltips.html">Travel Tips</a>
-    <a href="souvenirs.html">Souvenirs</a>
-    <a href="aboutus.html">About Us</a>
+    <a href="A_home.html">Home</a>
+    <a href="B_itinerary.html">Itinerary</a>
+    <a href="C_foodguide.html">Food Guide</a>
+    <a href="D_traveltips.html">Travel Tips</a>
+    <a href="E_souvenirs.html">Souvenirs</a>
+    <a href="F_aboutus.html">About Us</a>
   </nav>
 
     <main>
@@ -180,7 +186,7 @@
     <div class="gallery">
 
       <div class="card">
-        <img src="https://i.pinimg.com/564x/4c/3b/6b/4c3b6bdfc3d46f0c2fcbf6d6a5a0bb9b.jpg" alt="Ramen">
+        <img src="https://static.japan-food.guide/uploads/article/cover_image/000/000/008/b339d4e16aa685abd60e9e2968d8b319f5e69139bddecdac7e6a3db3868293ad/eye_catch_ramen.jpg?1764846507" alt="Ramen">
         <h4>Ramen</h4>
         <p>
           A flavorful noodle soup with rich broth, wheat noodles, and toppings
@@ -189,7 +195,7 @@
       </div>
 
       <div class="card">
-        <img src="https://i.pinimg.com/564x/ef/97/52/ef9752e0d7b4c66c8b5f4d6eab4c62b6.jpg" alt="Sushi">
+        <img src="https://static.japan-food.guide/uploads/ckeditor_asset/data/000/008/103/980fa925f924a04ee4b00c845642e7778dab4d18ec406e271389436f7dca11e6/eye_catch_sushi.jpg" alt="Sushi">
         <h4>Sushi</h4>
         <p>
           Vinegared rice paired with fresh seafood or vegetables. Ranges from
@@ -198,7 +204,7 @@
       </div>
 
       <div class="card">
-        <img src="https://i.pinimg.com/564x/ab/28/2c/ab282c1b70d8b8d37a6fbc5b2f18db18.jpg" alt="Bento">
+        <img src="https://static1.squarespace.com/static/6217a6968b376a434418ae8b/t/6416043616fc5e2dca82c202/1679164471002/Show+Your+Love+with+our+Miso+Tasty+Bento+Box+Lunch+Ideas.jpg?format=1500w" alt="Bento">
         <h4>Bento</h4>
         <p>
           A boxed meal with rice, meat or fish, and vegetables. Affordable,
@@ -207,7 +213,7 @@
       </div>
 
       <div class="card">
-        <img src="https://i.pinimg.com/564x/3e/8f/4b/3e8f4b8b52df5a91c4b6c5c24d9cf3d3.jpg" alt="Takoyaki">
+        <img src="https://iamafoodblog.b-cdn.net/wp-content/uploads/2024/12/takoyaki-recipe-4790w.jpg" alt="Takoyaki">
         <h4>Takoyaki</h4>
         <p>
           Ball-shaped street food filled with octopus, commonly found at festivals
@@ -216,7 +222,7 @@
       </div>
 
       <div class="card">
-        <img src="https://i.pinimg.com/564x/6e/5f/52/6e5f523b4f8e0cb15c4c6f8b90a3c59f.jpg" alt="Tempura">
+        <img src="https://www.eatsomethingsexy.com/wp-content/uploads/2020/12/shrimp-tempura.jpg" alt="Tempura">
         <h4>Tempura</h4>
         <p>
           Lightly battered and deep-fried seafood or vegetables. Crispy, not greasy,
@@ -225,15 +231,55 @@
       </div>
 
       <div class="card">
-        <img src="https://i.pinimg.com/564x/72/87/61/728761bfc88f5a5c2b1f41b7b13d75e4.jpg" alt="Japanese Sweets">
+        <img src="https://www.sogoodblog.com/wp-content/uploads/2014/09/tumblr_static_mochi-pyramid__1_-550x400.jpg" alt="Japanese Sweets">
         <h4>Japanese Sweets</h4>
         <p>
           Traditional desserts like mochi and dango, often made with rice and red
           bean paste and less sweet than Western desserts.
         </p>
       </div>
+      <!-- Expanded Ramen -->
+<div id="expanded-1" class="card-expanded" style="display:none; background-color:rgba(246,231,216,0.95); padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); margin:20px auto; max-width:600px;">
+  <button class="close-btn">X</button>
+  <h2>Ramen</h2>
+  <p>Ramen is a Japanese noodle soup with a rich, savory broth. Popular toppings include sliced pork, soft-boiled eggs, nori (seaweed), and scallions. Each region in Japan has its own style of ramen, such as Tonkotsu from Kyushu, Shoyu from Tokyo, or Miso from Hokkaido. It’s a must-try for any beginner visiting Japan.</p>
+</div>
 
-    </div>
+<!-- Expanded Sushi -->
+<div id="expanded-2" class="card-expanded" style="display:none; background-color:rgba(246,231,216,0.95); padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); margin:20px auto; max-width:600px;">
+  <button class="close-btn">X</button>
+  <h2>Sushi</h2>
+  <p>Sushi consists of vinegared rice combined with fresh seafood, vegetables, or egg. Common types include nigiri, sashimi, and maki rolls. Sushi is available from casual conveyor-belt restaurants to high-end sushi bars. It’s often served with soy sauce, wasabi, and pickled ginger.</p>
+</div>
+
+<!-- Expanded Bento -->
+<div id="expanded-3" class="card-expanded" style="display:none; background-color:rgba(246,231,216,0.95); padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); margin:20px auto; max-width:600px;">
+  <button class="close-btn">X</button>
+  <h2>Bento</h2>
+  <p>Bento is a single-portion boxed meal commonly containing rice, meat or fish, and vegetables. Bento boxes are convenient for travelers and are sold at train stations, convenience stores, and specialty shops. Some are artistically arranged and reflect seasonal ingredients.</p>
+</div>
+
+<!-- Expanded Takoyaki -->
+<div id="expanded-4" class="card-expanded" style="display:none; background-color:rgba(246,231,216,0.95); padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); margin:20px auto; max-width:600px;">
+  <button class="close-btn">X</button>
+  <h2>Takoyaki</h2>
+  <p>Takoyaki are ball-shaped snacks made of wheat flour batter and cooked with diced octopus, tempura scraps, pickled ginger, and green onions. They are brushed with takoyaki sauce and mayonnaise and sprinkled with bonito flakes. Popular at street stalls and festivals, especially in Osaka.</p>
+</div>
+
+<!-- Expanded Tempura -->
+<div id="expanded-5" class="card-expanded" style="display:none; background-color:rgba(246,231,216,0.95); padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); margin:20px auto; max-width:600px;">
+  <button class="close-btn">X</button>
+  <h2>Tempura</h2>
+  <p>Tempura consists of seafood or vegetables lightly battered and deep-fried to crispy perfection. Served with dipping sauce, tempura is a classic Japanese dish enjoyed at restaurants and festivals. It is known for its delicate, non-greasy texture.</p>
+</div>
+
+<!-- Expanded Japanese Sweets -->
+<div id="expanded-6" class="card-expanded" style="display:none; background-color:rgba(246,231,216,0.95); padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); margin:20px auto; max-width:600px;">
+  <button class="close-btn">X</button>
+  <h2>Japanese Sweets</h2>
+  <p>Traditional Japanese sweets, or wagashi, include mochi, dango, and yokan. These treats are usually made from rice, beans, and natural sweeteners and are less sugary than Western desserts. They are often enjoyed with tea and reflect seasonal themes and festivals.</p>
+</div>
+
   </section>
 </main>
 
@@ -246,5 +292,6 @@
       <a href="#">Twitter</a>
     </p>
   </footer>
+   <script src="FoodGuidescript.js"></script>
 
 
