@@ -102,3 +102,16 @@ About Us
 Started Website for Bonus: 
 
 https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupOfJapanEaseHomePage.html
+
+
+
+
+
+
+
+# Q3 Proposal Update
+
+## JapanEase: A Beginner's Guide to Japan
+
+## Features 
+- A section at the About Us page that takes user-input feedback on the accessibility and 
