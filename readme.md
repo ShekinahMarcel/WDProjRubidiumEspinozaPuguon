@@ -102,3 +102,28 @@ About Us
 Started Website for Bonus: 
 
 https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupOfJapanEaseHomePage.html
+
+
+
+
+
+
+# Q3 Proposal Update
+
+## JapanEase: A Beginner's Guide to Japan 
+
+## Features 
+- Highlight the active page in the navbar
+- An added interactive page for budgeting
+- A user-input feedback section in the About Us page 
+- More Consistency with visuals, pop-ups, and javascript animations
+
+## Details 
+- The active tab will change in color or background to indicated the selected page the user is currently in. This will be implemented using CSS and HTML that applies the active styling. 
+- An additional page that helps the users budget and calculate expenses. A simple calculator will be added to the website that allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. At the same page, it would include a sheet like section that tracks the users expenses based on input. 
+- A feedback section will be added where users can enter a username, rating, and short feedback message. Submissions will be displayed using Javascript. 
+- All hover effects, pop-ups, and animations will follow a cohesive and uniform design. Colors, shadows, and animation styles shall be standardized to be more aesthetically pleasing. 
+
+
+## Definition of Done
+
