@@ -96,6 +96,7 @@ About Us
 
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/66b3cfd1-2e4f-4d40-9147-c65ba38d544f" />
 
+
 #Additional Updated Wireframe
 
 Feedback 
@@ -113,7 +114,6 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 
 
 
-<<<<<<< HEAD
 # Q3 Proposal Update
 
 ## JapanEase: A Beginner's Guide to Japan 
