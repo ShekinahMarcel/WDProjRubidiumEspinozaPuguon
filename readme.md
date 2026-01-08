@@ -127,13 +127,8 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 
 
 ## Definition of Done
-
-=======
-
-# Q3 Proposal Update
-
-## JapanEase: A Beginner's Guide to Japan
-
-## Features 
-- A section at the About Us page that takes user-input feedback on the accessibility and 
->>>>>>> 67bd5cd1d8061ea7088d90092b44dd13ebe09b43
+- When the active navigation tab highlights correctly across all pages with ease
+- When the calculator performs basic accurate calculations
+- When the feedback section can successfully accept user input and displays submitted feedback
+- When visual styles are now consistent
+- When all features function without errors or broken links
