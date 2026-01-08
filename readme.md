@@ -1,4 +1,4 @@
-# JapanEase  
+<img width="1275" height="729" alt="image" src="https://github.com/user-attachments/assets/eaf51db9-2da7-42b7-9abf-dd46a356498c" /># JapanEase  
 ## A Beginner's Guide to Japan  
 
 ---
@@ -96,6 +96,9 @@ About Us
 
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/66b3cfd1-2e4f-4d40-9147-c65ba38d544f" />
 
+Feedback 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/d4cd43d5-dcb8-46e8-a541-cd8a0af3585f" />
 
 --- 
 
