@@ -132,3 +132,8 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 - When the feedback section can successfully accept user input and displays submitted feedback
 - When visual styles are now consistent
 - When all features function without errors or broken links
+
+## Additional Pages 
+- Budgeting Page that would provide a simple built in calculator for quick computation and a google sheet link design where the user can input their expenses during the trip. This sheet would automatically calculate basic functions for the user such as how much of their budget they have left. 
+- A separate feedback or rating page will be added. A star rating system with a text area for written feedback shall be part. A submit button with a confirmation message would also be displayed. 
+- A new page that includes fun facts about cities, tradition, and practices in Japan. This would provide users with interesting yet helpful facts that encourages them to be knowledgable of Japan more. 
