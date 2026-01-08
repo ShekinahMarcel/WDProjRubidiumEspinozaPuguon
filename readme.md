@@ -1,4 +1,4 @@
-<img width="1275" height="729" alt="image" src="https://github.com/user-attachments/assets/eaf51db9-2da7-42b7-9abf-dd46a356498c" /># JapanEase  
+
 ## A Beginner's Guide to Japan  
 
 ---
