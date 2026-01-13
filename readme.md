@@ -1,4 +1,4 @@
-# JapanEase  
+
 ## A Beginner's Guide to Japan  
 
 ---
@@ -97,6 +97,12 @@ About Us
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/66b3cfd1-2e4f-4d40-9147-c65ba38d544f" />
 
 
+#Additional Updated Wireframe
+
+Feedback 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/d4cd43d5-dcb8-46e8-a541-cd8a0af3585f" />
+
 --- 
 
 Started Website for Bonus: 
@@ -108,8 +114,11 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 9b537fdc1cec69b84fc3713e234d576bd0a8dc56
 # Q3 Proposal Update
 
 ## JapanEase: A Beginner's Guide to Japan 
