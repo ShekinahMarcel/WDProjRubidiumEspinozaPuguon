@@ -114,11 +114,7 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 
 
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 9b537fdc1cec69b84fc3713e234d576bd0a8dc56
 # Q3 Proposal Update
 
 ## JapanEase: A Beginner's Guide to Japan 
