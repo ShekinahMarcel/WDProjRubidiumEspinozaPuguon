@@ -1,0 +1,38 @@
+<section class="box feature-box">
+  <h2>Real-Time Clock</h2>
+  <p>Current time in different locations:</p>
+
+  <div>
+    <strong>Philippines:</strong>
+    <div id="clock-ph">Loading...</div>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <strong>Japan:</strong>
+    <div id="clock-jp">Loading...</div>
+  </div>
+</section>
+
+<script>
+function updateClock(id, timeZone) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = new Date().toLocaleTimeString([], {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+}
+
+function updateClocks() {
+  updateClock("clock-ph", "Asia/Manila");
+  updateClock("clock-jp", "Asia/Tokyo");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateClocks();
+  setInterval(updateClocks, 1000);
+});
+</script>
+
