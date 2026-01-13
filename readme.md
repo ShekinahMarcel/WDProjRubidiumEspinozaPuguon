@@ -108,7 +108,8 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 
 
 
-<<<<<<< HEAD
+
+
 # Q3 Proposal Update
 
 ## JapanEase: A Beginner's Guide to Japan 
@@ -121,19 +122,19 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 
 ## Details 
 - The active tab will change in color or background to indicated the selected page the user is currently in. This will be implemented using CSS and HTML that applies the active styling. 
-- An additional page that helps the users budget and calculate expenses. A simple calculator will be added to the website that allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. At the same page, it would include a sheet like section that tracks the users expenses based on input. 
+- An additional page that helps the users budget and calculate expenses. A simple calculator will be added to the website that allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. At the same page, it would include a sheet like section that tracks the users expenses based on input. The website will ask its user if they would like their calculated expenses in the "Budget Sheet."
 - A feedback section will be added where users can enter a username, rating, and short feedback message. Submissions will be displayed using Javascript. 
 - All hover effects, pop-ups, and animations will follow a cohesive and uniform design. Colors, shadows, and animation styles shall be standardized to be more aesthetically pleasing. 
 
 
 ## Definition of Done
+- When the active navigation tab highlights correctly across all pages with ease
+- When the calculator performs basic accurate calculations
+- When the feedback section can successfully accept user input and displays submitted feedback
+- When visual styles are now consistent
+- When all features function without errors or broken links
 
-=======
-
-# Q3 Proposal Update
-
-## JapanEase: A Beginner's Guide to Japan
-
-## Features 
-- A section at the About Us page that takes user-input feedback on the accessibility and 
->>>>>>> 67bd5cd1d8061ea7088d90092b44dd13ebe09b43
+## Additional Pages 
+- Budgeting Page that would provide a simple built in calculator for quick computation and a google sheet link design where the user can input their expenses during the trip. This sheet would automatically calculate basic functions for the user such as how much of their budget they have left. 
+- A separate feedback or rating page will be added. A star rating system with a text area for written feedback shall be part. A submit button with a confirmation message would also be displayed. 
+- A new page that includes fun facts about cities, tradition, and practices in Japan. This would provide users with interesting yet helpful facts that encourages them to be knowledgable of Japan more. This new webpage would also highlight a map of Japan that users can interact with. 
