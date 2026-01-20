@@ -58,6 +58,12 @@ nav a{
   margin:0 12px;
 }
 
+nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  color: var(--autumn-orange);
+}
+
 nav a:hover{color:var(--autumn-orange);}
 
 main {
@@ -134,12 +140,25 @@ h1{text-align:center;}
   cursor:pointer;
 }
 
-footer{
-  background:var(--autumn-brown);
-  color:var(--autumn-light);
-  text-align:center;
-  padding:20px;
-}
+    footer {
+      background-color: var(--autumn-brown);
+      color: var(--autumn-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: var(--autumn-orange);
+      text-decoration: underline;
+    }
 </style>
 </head>
 
@@ -157,10 +176,10 @@ footer{
   <a href="C_foodguide.html">Food Guide</a>
   <a href="D_traveltips.html">Travel Tips</a>
   <a href="E_souvenirs.html">Souvenirs</a>
-  <a href="F_aboutus.html">About Us</a>
   <a href="G_expenses.html">Expenses</a>
   <a href="H_budget.html">Budget Overview</a>
-  <a href="I_tripmap.html">Trip Planner</a>
+  <a href="I_tripmap.html" class="active">Trip Planner</a>
+  <a href="F_aboutus.html">About Us</a>
 </nav>
 
 <main>
@@ -191,8 +210,13 @@ footer{
 
 <footer>
   <p>© 2025 JapanEase. All Rights Reserved.</p>
+  <p>Authors: Alijah Lucas Espinoza, Shekinah Marcel Puguon</p>
+  <p>
+    <a href="https://www.facebook.com/pisaymc">Facebook</a> |
+    <a href="https://www.instagram.com/shexks._/">Shekinah IG</a> |
+    <a href="https://www.instagram.com/allyespozo/">Alijah IG</a>
+  </p>
 </footer>
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
