@@ -168,11 +168,11 @@ Budgeting Overview
 
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/ee2cae63-fe0a-4f16-a34e-5acb3e7bf983" />
 
-About Us 
+Trip Planner 
 
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/70a78956-0b11-471b-8080-90fdb847ea69" />
 
-Feedback
+About Us
 
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/504bb9bc-3af0-4d94-9135-2c4f0e6cd6d1" />
 
