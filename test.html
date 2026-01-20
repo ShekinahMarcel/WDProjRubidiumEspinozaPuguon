@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JapanEase Budget Planner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red: #b63e2e;
+  --orange: #d87c3f;
+  --light: #f6e7d8;
+  --dark: #3c2415;
+  --brown: #8a5a44;
+}
+
+body {
+  font-family: 'Zen Old Mincho', serif;
+  background: var(--light);
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  background: #fff8f0;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+h2 {
+  text-align: center;
+}
+
+input {
+  padding: 8px;
+  font-family: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid var(--brown);
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: var(--brown);
+  color: white;
+}
+
+button {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--red);
+}
+
+.summary {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.warning {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.safe { color: green; }
+.caution { color: var(--orange); }
+.danger { color: var(--red); }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>JapanEase Budget Planner 🇯🇵</h1>
+  <p>Plan your money wisely while traveling in Japan</p>
+</header>
+
+<main>
+  <h2>Total Budget (¥)</h2>
+  <input type="number" id="budget" value="0" oninput="calculate()">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Expense</th>
+        <th>Amount (¥)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="expenses">
+      <tr>
+        <td><input type="text" placeholder="e.g. Food"></td>
+        <td><input type="number" value="0" oninput="calculate()"></td>
+        <td><button onclick="removeRow(this)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <button onclick="addRow()">+ Add Expense</button>
+
+  <div class="summary">
+    <p>Total Spent: ¥<span id="spent">0</span></p>
+    <p>Money Left: ¥<span id="left">0</span></p>
+    <div id="warning" class="warning"></div>
+  </div>
+</main>
+
+<script>
+function addRow() {
+  const table = document.getElementById("expenses");
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+    <td><input type="text" placeholder="e.g. Transport"></td>
+    <td><input type="number" value="0" oninput="calculate()"></td>
+    <td><button onclick="removeRow(this)">Remove</button></td>
+  `;
+
+  table.appendChild(row);
+}
+
+function removeRow(btn) {
+  btn.parentElement.parentElement.remove();
+  calculate();
+}
+
+function calculate() {
+  const budget = Number(document.getElementById("budget").value);
+  const amounts = document.querySelectorAll("#expenses input[type='number']");
+  let spent = 0;
+
+  amounts.forEach(a => spent += Number(a.value));
+
+  const left = budget - spent;
+
+  document.getElementById("spent").textContent = spent;
+  document.getElementById("left").textContent = left;
+
+  const warning = document.getElementById("warning");
+  warning.className = "warning";
+
+  if (left <= 0) {
+    warning.textContent = "⚠ Budget your money wisely!!";
+    warning.classList.add("danger");
+  } 
+  else if (left <= budget * 0.2) {
+    warning.textContent = `⚠ Please be reminded that you have ¥${left} left!!`;
+    warning.classList.add("caution");
+  } 
+  else {
+    warning.textContent = "✓ You are managing your budget well!";
+    warning.classList.add("safe");
+  }
+}
+
+calculate();
+</script>
+
+</body>
+</html>
