@@ -97,19 +97,14 @@ About Us
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/66b3cfd1-2e4f-4d40-9147-c65ba38d544f" />
 
 
-#Additional Updated Wireframe
-
-Feedback 
-
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/d4cd43d5-dcb8-46e8-a541-cd8a0af3585f" />
-
 --- 
 
 Started Website for Bonus: 
 
 https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupOfJapanEaseHomePage.html
 
-test
+
+
 
 
 
@@ -142,3 +137,42 @@ test
 - Budgeting Page that would provide a simple built in calculator for quick computation and a google sheet link design where the user can input their expenses during the trip. This sheet would automatically calculate basic functions for the user such as how much of their budget they have left. The website would also accept user-input info where it would bring back an output of an estimated cost of expenses. 
 - A separate feedback or rating page will be added. A star rating system with a text area for written feedback shall be part. A submit button with a confirmation message would also be displayed. 
 - A new page that includes fun facts about cities, tradition, and practices in Japan. This would provide users with interesting yet helpful facts that encourages them to be knowledgable of Japan more. This new webpage would also highlight a map of Japan that users can interact with. 
+
+
+### Wireframes Updated Proposal
+Home Page
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/57bfd6de-6939-4d02-a826-c45790349f9f" />
+
+Itinerary 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/d0efa717-4cb9-4c33-9682-7b2d921a1186" />
+
+Food Guide 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/ae8298ef-62f5-43b8-b1a8-f7883883de6f" />
+
+Travel Tips 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/fa181707-2afe-448f-b31d-58b5c5e55013" />
+
+Souvenirs 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/5b770f50-b02a-4895-9687-3a3af3711e4b" />
+
+Budgeting 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/14b6ff0d-7a9c-4725-929e-56731329d613" />
+
+Interact
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/1b51996b-515e-4b2b-8bd2-feb7b6fda342" />
+
+About Us 
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/fcd9e9f1-2766-4916-a833-8f4064babed5" />
+
+Feedback
+
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/b08859f7-74fe-4ddd-bf89-a3af649faf65" />
+

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="JapanEase - A Beginner’s Guide to Japan. Discover Japan’s culture, travel tips, food, and must-visit destinations.">
   <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
-  <link rel="icon" type="image/png" href="WEBSITEICON.png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/refs/heads/main/final%20proj/images/WEBSITEICON.png">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
   <title>JapanEase | A Beginner’s Guide to Japan</title>
 
@@ -178,6 +178,22 @@
     .cities-list span.heart {
       margin-left: 8px;
     }
+
+.feature-box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.feature-box div {
+  font-size: 20px;
+  font-weight: bold;
+}
+
   </style>
 </head>
 <body>
@@ -194,29 +210,48 @@
     <a href="D_traveltips.html">Travel Tips</a>
     <a href="E_souvenirs.html">Souvenirs</a>
     <a href="F_aboutus.html">About Us</a>
+    <a href="G_expenses.html">Expenses</a>
+    <a href="H_budget.html">Budget Overview</a>
+    <a href="I_tripmap.html">Trip Planner</a>
   </nav>
 
-  <main>
-    <div class="interactive-card">
-      <img src="https://i.pinimg.com/736x/71/47/8e/71478e75cd9219a365f558f5950dd35e.jpg" alt="Welcome Japan">
-      <h3>Welcome to JapanEase</h3>
-      <p>Discover the beauty of Japan interactively! Explore culture, food, travel tips, and must-see destinations with this guide. Click on the cards below to learn more about famous cities. Each destination features images, descriptions, and travel advice. Start your journey across Japan now!</p>
+<main>
+  <div class="interactive-card">
+    <img src="https://i.pinimg.com/736x/71/47/8e/71478e75cd9219a365f558f5950dd35e.jpg" alt="Welcome Japan">
+    <h3>Welcome to JapanEase</h3>
+    <p>Discover the beauty of Japan interactively! Explore culture, food, travel tips, and must-see destinations with this guide. Click on the cards below to learn more about famous cities. Each destination features images, descriptions, and travel advice. Start your journey across Japan now!</p>
+  </div>
+
+  <section class="feature-box" style="background-color: var(--autumn-light); color: var(--autumn-dark); border-radius: 18px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); padding: 20px; text-align: center; max-width: 500px; flex: 1 1 350px; margin-top: 20px;">
+    <h2>Real-Time Clock</h2>
+    <p>Current time in different locations:</p>
+
+    <div>
+      <strong>Philippines:</strong>
+      <div id="clock-ph">Loading...</div>
     </div>
 
-    <section>
-      <h3>Featured Cities</h3>
-      <p>Explore Japan’s most famous destinations and mark your favorites:</p>
-      <div class="cities-list">
-        <p>Tokyo <span class="heart">♡</span></p>
-        <p>Kyoto <span class="heart">♡</span></p>
-        <p>Osaka <span class="heart">♡</span></p>
-        <p>Hokkaido <span class="heart">♡</span></p>
-        <p>Nara <span class="heart">♡</span></p>
-        <p>Hiroshima <span class="heart">♡</span></p>
-        <p>Fukuoka <span class="heart">♡</span></p>
-      </div>
-    </section>
-  </main>
+    <div style="margin-top: 10px;">
+      <strong>Japan:</strong>
+      <div id="clock-jp">Loading...</div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Featured Cities</h3>
+    <p>Explore Japan’s most famous destinations and mark your favorites:</p>
+    <div class="cities-list">
+      <p>Tokyo <span class="heart">♡</span></p>
+      <p>Kyoto <span class="heart">♡</span></p>
+      <p>Osaka <span class="heart">♡</span></p>
+      <p>Hokkaido <span class="heart">♡</span></p>
+      <p>Nara <span class="heart">♡</span></p>
+      <p>Hiroshima <span class="heart">♡</span></p>
+      <p>Fukuoka <span class="heart">♡</span></p>
+    </div>
+  </section>
+</main>
+
 
 <footer>
   <p>© 2025 JapanEase. All Rights Reserved.</p>
@@ -235,6 +270,27 @@
         heart.textContent = heart.classList.contains('filled') ? '♥' : '♡';
       });
     });
+
+function updateClock(id, timeZone) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = new Date().toLocaleTimeString([], {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+}
+
+function updateClocks() {
+  updateClock("clock-ph", "Asia/Manila");
+  updateClock("clock-jp", "Asia/Tokyo");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateClocks();
+  setInterval(updateClocks, 1000);
+});
   </script>
 </body>
 </html>

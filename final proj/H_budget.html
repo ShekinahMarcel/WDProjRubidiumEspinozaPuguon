@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JapanEase - A Beginner’s Guide to Japan. Discover Japan’s culture, travel tips, food, and must-visit destinations.">
+  <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
+  <link rel="icon" type="image/png" href="WEBSITEICON.png">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>JapanEase | A Beginner’s Guide to Japan</title>
+
+  <style>
+    :root {
+      --autumn-red: #b63e2e;
+      --autumn-orange: #d87c3f;
+      --autumn-light: #f6e7d8;
+      --autumn-dark: #3c2415;
+      --autumn-brown: #8a5a44;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Zen Old Mincho', serif;
+      background-color: var(--autumn-light);
+      color: var(--autumn-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
+      color: var(--autumn-dark);
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 70px;
+      height: 70px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--autumn-dark);
+    }
+
+    header h2 {
+      margin: 8px 0 0;
+      font-size: 22px;
+      color: var(--autumn-dark);
+    }
+
+    nav {
+      background-color: var(--autumn-brown);
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      color: var(--autumn-orange);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 60px 20px;
+      background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
+    }
+
+    footer {
+      background-color: var(--autumn-brown);
+      color: var(--autumn-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: var(--autumn-orange);
+      text-decoration: underline;
+    }
+
+.budget-section {
+  width: 100%;
+  max-width: 500px; 
+  margin-bottom: 20px;
+}
+.budget-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.budget-bar {
+  height: 25px;
+  border-radius: 12px;
+  background-color: #fff0e5;
+  overflow: hidden;
+  border: 2px solid #8a5a44;
+}
+.budget-fill {
+  height: 100%;
+  width: 0;
+  text-align: right;
+  padding-right: 8px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  border-radius: 12px 0 0 12px;
+}
+.meals { background-color: #d87c3f; }
+.transport { background-color: #b63e2e; }
+.remaining { background-color: #8a5a44; }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
+    <h1>JapanEase</h1>
+    <h2>A Beginner’s Guide to Japan</h2>
+  </header>
+
+  <nav>
+    <a href="A_home.html">Home</a>
+    <a href="B_itinerary.html">Itinerary</a>
+    <a href="C_foodguide.html">Food Guide</a>
+    <a href="D_traveltips.html">Travel Tips</a>
+    <a href="E_souvenirs.html">Souvenirs</a>
+    <a href="F_aboutus.html">About Us</a>
+    <a href="G_expenses.html">Expenses</a>
+    <a href="H_budget.html">Budget Overview</a>
+    <a href="I_tripmap.html">Trip Planner</a>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<h1>Budget Breakdown</h1>
+
+<div class="budget-section">
+  <div class="budget-label">
+    <span>Meals</span><span id="mealsValue">¥0</span>
+  </div>
+  <div class="budget-bar">
+    <div class="budget-fill meals" id="mealsBar"></div>
+  </div>
+</div>
+
+<div class="budget-section">
+  <div class="budget-label">
+    <span>Transport</span><span id="transportValue">¥0</span>
+  </div>
+  <div class="budget-bar">
+    <div class="budget-fill transport" id="transportBar"></div>
+  </div>
+</div>
+
+<div class="budget-section">
+  <div class="budget-label">
+    <span>Remaining</span><span id="remainingValue">¥0</span>
+  </div>
+  <div class="budget-bar">
+    <div class="budget-fill remaining" id="remainingBar"></div>
+  </div>
+</div>
+
+<script>
+// Load saved trip data
+const savedData = JSON.parse(localStorage.getItem("tripPlanner")) || {};
+const dailyBudget = Number(savedData.dailyBudget) || 0;
+const transportBudget = Number(savedData.transportBudget) || 0;
+const mealsCount = savedData.mealsPerDay ? Number(savedData.mealsPerDay[0]) : 2;
+const mealCost = 1000; // estimated per meal
+const totalMealCost = mealsCount * mealCost;
+const remainingBudget = dailyBudget - totalMealCost - transportBudget;
+
+// Function to update bars
+function updateBar(barId, value, total) {
+  const percent = total > 0 ? Math.min((value / total) * 100, 100) : 0;
+  document.getElementById(barId).style.width = percent + "%";
+  return percent;
+}
+
+// Update progress bars and values
+document.getElementById("mealsValue").textContent = `¥${totalMealCost}`;
+document.getElementById("transportValue").textContent = `¥${transportBudget}`;
+document.getElementById("remainingValue").textContent = `¥${remainingBudget > 0 ? remainingBudget : 0}`;
+
+updateBar("mealsBar", totalMealCost, dailyBudget);
+updateBar("transportBar", transportBudget, dailyBudget);
+updateBar("remainingBar", remainingBudget > 0 ? remainingBudget : 0, dailyBudget);
+</script>
+</body>
+</html>

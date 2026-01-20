@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JapanEase - A Beginner’s Guide to Japan. Discover Japan’s culture, travel tips, food, and must-visit destinations.">
+  <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
+  <link rel="icon" type="image/png" href="WEBSITEICON.png">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>JapanEase | A Beginner’s Guide to Japan</title>
+
+  <style>
+    :root {
+      --autumn-red: #b63e2e;
+      --autumn-orange: #d87c3f;
+      --autumn-light: #f6e7d8;
+      --autumn-dark: #3c2415;
+      --autumn-brown: #8a5a44;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Zen Old Mincho', serif;
+      background-color: var(--autumn-light);
+      color: var(--autumn-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: url('https://i.pinimg.com/1200x/d3/c7/1c/d3c71c951b70d5748e1a5187507393f4.jpg') center/cover no-repeat;
+      color: var(--autumn-dark);
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 70px;
+      height: 70px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      color: var(--autumn-dark);
+    }
+
+    header h2 {
+      margin: 8px 0 0;
+      font-size: 22px;
+      color: var(--autumn-dark);
+    }
+
+    nav {
+      background-color: var(--autumn-brown);
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    nav a:hover {
+      color: var(--autumn-orange);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 60px 20px;
+      background: url('https://i.pinimg.com/1200x/1a/51/f3/1a51f3824c4482b27daf46bb4500834f.jpg') center/cover no-repeat fixed;
+    }
+
+    footer {
+      background-color: var(--autumn-brown);
+      color: var(--autumn-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: var(--autumn-light);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: var(--autumn-orange);
+      text-decoration: underline;
+    }
+
+    .places-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.place-card {
+  background-color: #fff0e5;
+  border: 2px solid #8a5a44;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.place-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #f6e7d8;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+}
+.close-btn {
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #d87c3f;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
+    <h1>JapanEase</h1>
+    <h2>A Beginner’s Guide to Japan</h2>
+  </header>
+
+  <nav>
+    <a href="A_home.html">Home</a>
+    <a href="B_itinerary.html">Itinerary</a>
+    <a href="C_foodguide.html">Food Guide</a>
+    <a href="D_traveltips.html">Travel Tips</a>
+    <a href="E_souvenirs.html">Souvenirs</a>
+    <a href="F_aboutus.html">About Us</a>
+    <a href="G_expenses.html">Expenses</a>
+    <a href="H_budget.html">Budget Overview</a>
+    <a href="I_tripmap.html">Trip Planner</a>
+  </nav>
+
+  <h1>Places You Want to Visit</h1>
+<div class="places-container" id="placesContainer"></div>
+
+<div class="modal" id="modal">
+  <div class="modal-content" id="modalContent">
+    <p id="placeName"></p>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+const savedData = JSON.parse(localStorage.getItem("tripPlanner")) || {};
+const placesList = savedData.places ? savedData.places.split(',').map(p => p.trim()) : [];
+
+const container = document.getElementById('placesContainer');
+
+placesList.forEach(place => {
+  const card = document.createElement('div');
+  card.className = 'place-card';
+  card.textContent = place;
+  card.onclick = () => showModal(place);
+  container.appendChild(card);
+});
+
+const modal = document.getElementById('modal');
+const placeName = document.getElementById('placeName');
+
+function showModal(place) {
+  placeName.textContent = `Plan your visit: ${place}`;
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+}
+</script>
+</body>
+</html>

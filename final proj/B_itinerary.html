@@ -235,6 +235,9 @@
     <a href="D_traveltips.html">Travel Tips</a>
     <a href="E_souvenirs.html">Souvenirs</a>
     <a href="F_aboutus.html">About Us</a>
+    <a href="G_expenses.html">Expenses</a>
+    <a href="H_budget.html">Budget Overview</a>
+    <a href="I_tripmap.html">Trip Planner</a>
   </nav>
 
   <div class="gallery">
@@ -328,6 +331,23 @@
   </p>
 </footer>
 
-  <script src="Itineraryscript.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', function() {
+      var id = this.dataset.card;
+      document.getElementById('expanded-' + id).style.display = 'block';
+    });
+  }
+
+  var closeBtns = document.querySelectorAll('.close-btn');
+  for (var i = 0; i < closeBtns.length; i++) {
+    closeBtns[i].addEventListener('click', function(e) {
+      e.target.parentElement.style.display = 'none';
+    });
+  }
+});
+  </script>
 </body>
 </html>
