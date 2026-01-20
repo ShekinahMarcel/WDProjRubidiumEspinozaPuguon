@@ -235,27 +235,28 @@ button:hover {
 <main>
   <div class="planner-container">
 
-    <section class="trip-form">
-      <h2>Trip Planner</h2>
+<section class="trip-form">
+  <h2>Trip Planner</h2>
 
-      <label>Daily Budget (¥)</label>
-      <input type="number" placeholder="e.g. 5000">
+  <label>Daily Budget (¥)</label>
+  <input type="number" id="dailyBudget" placeholder="e.g. 5000">
 
-      <label>Meals per Day</label>
-      <select>
-        <option>2 meals</option>
-        <option>3 meals</option>
-        <option>4 meals</option>
-      </select>
+  <label>Meals per Day</label>
+  <select id="mealsPerDay">
+    <option>2 meals</option>
+    <option>3 meals</option>
+    <option>4 meals</option>
+  </select>
 
-      <label>Places to Visit</label>
-      <textarea placeholder="Shibuya, Kyoto, Nara..."></textarea>
+  <label>Places to Visit</label>
+  <textarea id="places" placeholder="Shibuya, Kyoto, Nara..."></textarea>
 
-      <label>Transport Budget (¥)</label>
-      <input type="number" placeholder="e.g. 1200">
+  <label>Transport Budget (¥)</label>
+  <input type="number" id="transportBudget" placeholder="e.g. 1200">
 
-      <button class="plan-btn">Estimate Cost</button>
-    </section>
+  <button class="plan-btn">Estimate Cost</button>
+</section>
+
 
     <section class="calculator-wrapper">
       <div class="calculator">
@@ -323,6 +324,41 @@ function calculate() {
     display.value = "Error";
   }
 }
+const dailyBudget = document.getElementById("dailyBudget");
+const mealsPerDay = document.getElementById("mealsPerDay");
+const places = document.getElementById("places");
+const transportBudget = document.getElementById("transportBudget");
+const planBtn = document.querySelector(".plan-btn");
+
+window.onload = () => {
+  const savedData = JSON.parse(localStorage.getItem("tripPlanner"));
+  if (savedData) {
+    dailyBudget.value = savedData.dailyBudget || "";
+    mealsPerDay.value = savedData.mealsPerDay || "2 meals";
+    places.value = savedData.places || "";
+    transportBudget.value = savedData.transportBudget || "";
+  }
+};
+
+planBtn.addEventListener("click", (e) => {
+  e.preventDefault(); 
+
+  const data = {
+    dailyBudget: dailyBudget.value,
+    mealsPerDay: mealsPerDay.value,
+    places: places.value,
+    transportBudget: transportBudget.value
+  };
+
+  localStorage.setItem("tripPlanner", JSON.stringify(data));
+
+  const totalCost =
+    Number(dailyBudget.value || 0) +
+    Number(transportBudget.value || 0);
+
+  alert("Your estimated total cost: ¥" + totalCost);
+});
+
 </script>
 </body>
 </html>
