@@ -142,37 +142,37 @@ https://github.com/ShekinahMarcel/WDProjRubidiumEspinozaPuguon/blob/main/MockupO
 ### Wireframes Updated Proposal
 Home Page
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/57bfd6de-6939-4d02-a826-c45790349f9f" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/a8e65c4b-899f-4ad9-8db6-18e426f8ccce" />
 
 Itinerary 
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/d0efa717-4cb9-4c33-9682-7b2d921a1186" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/61444ff5-19ba-4392-8567-65882697d926" />
 
 Food Guide 
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/ae8298ef-62f5-43b8-b1a8-f7883883de6f" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/63066ce3-dec2-41f0-8dbd-b846ab8b3970" />
 
 Travel Tips 
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/fa181707-2afe-448f-b31d-58b5c5e55013" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/7690c127-2e91-417c-ba52-1bb1129c4a7a" />
 
 Souvenirs 
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/5b770f50-b02a-4895-9687-3a3af3711e4b" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/0f01df93-8a2c-42e3-84d4-f8e3791c007a" />
 
-Budgeting 
+Expenses
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/14b6ff0d-7a9c-4725-929e-56731329d613" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/4813a2fa-aa2c-4323-9b36-6da3cc76db39" />
 
-Interact
+Budgeting Overview
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/1b51996b-515e-4b2b-8bd2-feb7b6fda342" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/ee2cae63-fe0a-4f16-a34e-5acb3e7bf983" />
 
 About Us 
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/fcd9e9f1-2766-4916-a833-8f4064babed5" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/70a78956-0b11-471b-8080-90fdb847ea69" />
 
 Feedback
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/b08859f7-74fe-4ddd-bf89-a3af649faf65" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/504bb9bc-3af0-4d94-9135-2c4f0e6cd6d1" />
 
