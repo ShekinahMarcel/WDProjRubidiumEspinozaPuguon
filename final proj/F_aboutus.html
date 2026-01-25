@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JapanEase | About Us</title>
-<link rel="icon" type="image/png" href="images/WEBSITEICON.png">
+  <link rel="icon" type="image/png" href="./images/WEBSITEICON.png">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -69,6 +69,12 @@
   nav a:hover {
     color: var(--autumn-orange);
   }
+
+  nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  color: var(--autumn-orange);
+}
 
   main {
     flex: 1;
@@ -227,10 +233,10 @@
   <a href="C_foodguide.html">Food Guide</a>
   <a href="D_traveltips.html">Travel Tips</a>
   <a href="E_souvenirs.html">Souvenirs</a>
-  <a href="F_aboutus.html">About Us</a>
   <a href="G_expenses.html">Expenses</a>
   <a href="H_budget.html">Budget Overview</a>
   <a href="I_tripmap.html">Trip Planner</a>
+    <a href="F_aboutus.html" class="active">About Us</a>
 </nav>
 
 <main>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="JapanEase Trip Planner & Expense Calculator">
 <meta name="author" content="Alijah Lucas Espinoza, Shekinah Marcel Puguon">
-<link rel="icon" type="image/png" href="WEBSITEICON.png">
+<link rel="icon" type="image/png" href="./images/WEBSITEICON.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
 <title>Japanease | Expenses</title>
 
@@ -72,6 +72,12 @@ header img.logo {
     nav a:hover {
       color: var(--autumn-orange);
     }
+
+    nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  color: var(--autumn-orange);
+}
 
     main {
       display: flex;
@@ -229,17 +235,17 @@ button:hover {
   <a href="C_foodguide.html">Food Guide</a>
   <a href="D_traveltips.html">Travel Tips</a>
   <a href="E_souvenirs.html">Souvenirs</a>
-  <a href="F_aboutus.html">About Us</a>
-  <a href="G_expenses.html">Expenses</a>
+  <a href="G_expenses.html" class="active">Expenses</a>
   <a href="H_budget.html">Budget Overview</a>
   <a href="I_tripmap.html">Trip Planner</a>
+  <a href="F_aboutus.html">About Us</a>
 </nav>
 
 <main>
   <div class="planner-container">
 
 <section class="trip-form">
-  <h2>Trip Planner</h2>
+  <h2>Budgeting</h2>
 
   <label>Daily Budget (¥)</label>
   <input type="number" id="dailyBudget" placeholder="e.g. 5000">
