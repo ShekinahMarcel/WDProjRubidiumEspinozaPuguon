@@ -176,3 +176,47 @@ About Us
 
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/504bb9bc-3af0-4d94-9135-2c4f0e6cd6d1" />
 
+# FINAL MODIFICATION PROPOSAL 
+
+
+## Home Page 
+We will add a User Account/Profile Feature where we can keep users identified across visits. This provides personalized recommendations based on the user. This would retain keep and saved their previous data on the same account. 
+
+A user would be allowed to input a username with a password. This enables a user to access the account they have created. 
+
+### CRUD OPERATIONS 
+C(reate) - User signs up --> save userProfile in localStorage
+R(ead) - View profile page --> display saved username, password, etc. 
+U(pdate) - Change preview of saved information, personalization of website, or update favorite cities. 
+D(elte) - Delete profiles entirely or remove specific preferences. 
+
+## Itinerary Page 
+We will add a space where users can add "stickynotes" on a designated space to keep their simple mental notes documented. 
+
+A user would be able to press a button to add a stickynote and write notes that they can return to later. 
+
+### CRUD OPERATIONS 
+C(reate) - Add a stickynote --> saves in localStorage
+R(ead) - View past notes from the same user --> display previous notes
+U(update) - Edit past and current notes, reorder them by dragging
+D(elete) - Remove notes that are no longer of use or are now unnecessary 
+
+## Expenses Page 
+A more comprehensive and detailed expenses tracker would be added. A user would be able to individually add expenses under specific categories. It would display the remaining budget they would have left given their intial budget. 
+
+### CRUD OPERATIONS
+C(reate) - A user can add a new expense and make it part of the tracker
+R(ead) - The user can reevaluate their spending habits as they get to view their past expenses 
+U(update) - Users can edit their remaining budget
+D(elete) - A user may choose to completely remove whichever expense they choose. 
+
+## Travel Planner Page 
+Users are allowed to plan trips visually on the map provided. The pins can be dragged or notes edited. Routes would show travel sequence between points. 
+
+There will be a sidebar that would display all the locations pinned by user. This would give specific coordinates as it shows the order of locations pinned. 
+
+### CRUD OPERATIONS
+C(reate) - Pinning a new location would add another noted location in the sidebar and saved in localStorage
+R(ead) - Past pins are saved here too
+U(update) - Past pins can be dragged and pinned elsewhere
+D(elete) - Specific pins can be removed or deleted completely
