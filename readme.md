@@ -220,3 +220,25 @@ C(reate) - Pinning a new location would add another noted location in the sideba
 R(ead) - Past pins are saved here too
 U(update) - Past pins can be dragged and pinned elsewhere
 D(elete) - Specific pins can be removed or deleted completely
+
+### WIREFRAMES FOR FINAL MODIFICATION PROPOSAL 
+
+Home Page:
+
+<img width="900" height="600" alt="Screenshot 2026-03-20 234113" src="https://github.com/user-attachments/assets/9f1c3c52-e8b7-4328-a8f0-a783c2589255" />
+
+Itinerary Page:
+
+<img width="900" height="600" alt="Screenshot 2026-03-20 234134" src="https://github.com/user-attachments/assets/aead050f-1a9c-4c9a-923b-be59956bf84b" />
+
+Expenses Page:
+
+<img width="900" height="600" alt="Screenshot 2026-03-20 234150" src="https://github.com/user-attachments/assets/7efd7de5-a9b1-4d85-a2cf-ad5445978bc0" />
+
+Travel Planner Page:
+
+<img width="900" height="600" alt="Screenshot 2026-03-20 234201" src="https://github.com/user-attachments/assets/102a3fe5-5720-4054-a519-190c7729d054" />
+
+
+
+
