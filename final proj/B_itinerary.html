@@ -175,7 +175,7 @@
       cursor: pointer;
       position: relative;
       z-index: 1;
-    }
+}
 
     .card img {
       width: 100%;
@@ -224,6 +224,56 @@
       border: none;
       padding: 5px 10px;
     }
+
+.notes-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f6e7d8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#noteInput {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #8a5a44;
+  margin-bottom: 10px;
+}
+
+.note {
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.note button {
+  margin-left: 5px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.fav-btn.active {
+  color: gold;
+}
   </style>
 </head>
 <body>
@@ -247,38 +297,54 @@
     <a href="F_aboutus.html">About Us</a>
   </nav>
 
+  <div class="notes-container">
+  <h2>Sticky Notes</h2>
+
+  <textarea id="noteInput" placeholder="Write a note..."></textarea>
+
+  <button onclick="addNote()">Add Note</button>
+
+  <div id="notesList"></div>
+</div>
+
   <div class="gallery">
     <div class="card" data-card="1">
+      <button class="fav-btn">★</button>
       <img src="https://www.travelcaffeine.com/wp-content/uploads/2018/08/kinopio-cafe-toad-restaurant-super-nintendo-world-universal-studios-japan-osaka-532.jpg" alt="Osaka">
       <h4>Universal Studios</h4>
       <p>2-1-33 Sakurajima, Konohana-ku, Osaka, Osaka Prefecture 554-0031</p>
     </div>
 
     <div class="card" data-card="2">
+      <button class="fav-btn">★</button>
       <img src="https://i.pinimg.com/736x/4d/49/2d/4d492dcb340cae11a8d6040efe147562.jpg" alt="Osaka, Japan">
       <h4>Dotonbori</h4>
       <p>Dōtonbori, Chūō Ward, Osaka, 542-0071</p>
     </div>
 
     <div class="card" data-card="3">
+      <button class="fav-btn">★</button>
       <img src="https://i.pinimg.com/1200x/31/43/e5/3143e59dcc79a813a1c3ea555ce6c908.jpg" alt="Sample 3">
       <h4>Umeda Sky Building</h4>
       <p>1-1-88 Oyodonaka, Kita-ku, Osaka, 531-6023</p>
     </div>
 
     <div class="card" data-card="4">
+      <button class="fav-btn">★</button>
       <img src="https://i.pinimg.com/1200x/e3/63/8e/e3638ec4c03c6937bd8c3f0fc728a6f7.jpg" alt="Sample 4">
       <h4>Shibuya</h4>
       <p>Shibuya Crossing</p>
     </div>
 
     <div class="card" data-card="5">
+      <button class="fav-btn">★</button>
       <img src="https://i.pinimg.com/474x/ba/ea/f4/baeaf4aa62470c817d866c1ef2b27013.jpg" alt="Sample 5">
       <h4>Ueno Park</h4>
       <p>Uenokōen, Taitō City, Tokyo 110-0007</p>
     </div>
 
     <div class="card" data-card="6">
+      <button class="fav-btn">★</button>
       <img src="https://i.pinimg.com/736x/6b/af/82/6baf82a13e033ea564cf9598dde9d9c2.jpg" alt="Sample 6">
       <h4>Senso-ji</h4>
       <p>2 Chome-3-1 Asakusa, Taitō City, Tokyo 111-0032</p>
@@ -339,6 +405,94 @@
 </footer>
 
   <script>
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+function renderNotes() {
+  const list = document.getElementById("notesList");
+  list.innerHTML = "";
+
+  notes.forEach((note, index) => {
+    list.innerHTML += `
+      <div class="note">
+        <p contenteditable="true" onblur="editNote(${index}, this.innerText)">
+          ${note}
+        </p>
+        <button onclick="deleteNote(${index})">Delete</button>
+      </div>
+    `;
+  });
+}
+
+function addNote() {
+  const input = document.getElementById("noteInput");
+  if (!input.value.trim()) return;
+
+  notes.push(input.value);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  input.value = "";
+  renderNotes();
+}
+
+function editNote(index, value) {
+  notes[index] = value;
+  localStorage.setItem("notes", JSON.stringify(notes));
+}
+
+function deleteNote(index) {
+  notes.splice(index, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  renderNotes();
+}
+
+renderNotes();
+
+window.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".gallery");
+  document.querySelectorAll(".card").forEach(card => {
+  card.classList.remove("favorited");
+
+  const btn = card.querySelector(".fav-btn");
+  if (btn) btn.textContent = "☆";
+});
+
+  function reorder() {
+    const cards = Array.from(document.querySelectorAll(".card"));
+
+    cards.sort((a, b) => {
+      return (b.classList.contains("favorited") ? 1 : 0) -
+             (a.classList.contains("favorited") ? 1 : 0);
+    });
+
+    cards.forEach(c => gallery.appendChild(c));
+  }
+
+  document.querySelectorAll(".card").forEach(card => {
+    const favBtn = card.querySelector(".fav-btn");
+    const img = card.querySelector("img");
+
+    favBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      card.classList.toggle("favorited");
+
+      favBtn.textContent = card.classList.contains("favorited") ? "★" : "☆";
+
+      reorder();
+    });
+
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const id = card.dataset.card;
+      const modal = document.getElementById("expanded-" + id);
+
+      if (modal) modal.style.display = "block";
+    });
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   var cards = document.querySelectorAll('.card');
   for (var i = 0; i < cards.length; i++) {
