@@ -159,6 +159,79 @@ h1{text-align:center;}
       color: var(--autumn-orange);
       text-decoration: underline;
     }
+
+.board-section{
+  position:relative;
+  width:500px; 
+  order:-1; 
+}
+
+#board{
+  width:100%;
+  height:600px; 
+  background:url('YOUR_IMAGE_LINK_HERE') no-repeat center;
+  background-size:contain; 
+  background-color:#d6b48c; 
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  position:relative;
+  overflow:hidden;
+}
+
+#addNoteBtn{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  z-index:5;
+  background:var(--autumn-red);
+  color:white;
+  border:none;
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.sticky{
+  position:absolute;
+  width:100px;
+  min-height:100px;
+  background:#fff8a6;
+  padding:10px;
+  font-size:12px;
+  border-radius:6px;
+  box-shadow:2px 4px 8px rgba(0,0,0,0.2);
+  cursor:move;
+
+}
+
+.control-panel{
+  position:fixed;
+  top:120px;
+  left:20px; 
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:999;
+}
+
+.control-panel button{
+  padding:10px 16px;
+  background:var(--autumn-red);
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  font-size:14px;
+  transition:0.2s;
+}
+
+.control-panel button:hover{
+  background:var(--autumn-orange);
+  transform:translateY(-2px);
+}
 </style>
 </head>
 
@@ -199,6 +272,17 @@ h1{text-align:center;}
   </ul>
 </div>
 
+<div class="control-panel">
+  <button id="resetMapBtn">🗺 Reset Map</button>
+  <button id="resetNotesBtn">🧷 Reset Notes</button>
+</div>
+
+<div class="board-section">
+  <button id="addNoteBtn">+</button>
+  <div id="board"></div>
+</div>
+
+
 </main>
 
 <div class="modal" id="modal">
@@ -220,6 +304,7 @@ h1{text-align:center;}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
+
 const savedData=JSON.parse(localStorage.getItem("tripPlanner"))||{}
 const places=savedData.places?savedData.places.split(',').map(p=>p.trim()):[]
 const container=document.getElementById("placesContainer")
@@ -269,6 +354,131 @@ function addMarker(lat,lng,note=""){
 
 data.forEach(p=>addMarker(p.lat,p.lng,p.note))
 map.on("click",e=>addMarker(e.latlng.lat,e.latlng.lng))
+
+const board = document.getElementById("board")
+const addBtn = document.getElementById("addNoteBtn")
+
+let notes = JSON.parse(localStorage.getItem("stickyNotes")) || []
+
+function saveNotes(){
+  localStorage.setItem("stickyNotes", JSON.stringify(notes))
+}
+
+function createNote(noteData){
+  const note = document.createElement("div")
+  note.className = "sticky"
+  note.contentEditable = true
+  note.innerText = noteData.text || "New note..."
+
+  note.style.left = noteData.x + "px"
+  note.style.top = noteData.y + "px"
+  note.style.transform = `rotate(${noteData.angle}deg)`
+
+  let offsetX = 0, offsetY = 0, dragging = false
+
+  note.addEventListener("mousedown", (e)=>{
+    dragging = true
+    offsetX = e.offsetX
+    offsetY = e.offsetY
+  })
+
+  document.addEventListener("mousemove", (e)=>{
+    if(!dragging) return
+
+    const rect = board.getBoundingClientRect()
+
+    let x = e.clientX - rect.left - offsetX
+    let y = e.clientY - rect.top - offsetY
+
+    // keep inside board
+    x = Math.max(0, Math.min(x, board.clientWidth - 110))
+    y = Math.max(0, Math.min(y, board.clientHeight - 110))
+
+    note.style.left = x + "px"
+    note.style.top = y + "px"
+  })
+
+  document.addEventListener("mouseup", ()=>{
+    if(dragging){
+      dragging = false
+
+      const index = Array.from(board.children).indexOf(note)
+      if(notes[index]){
+        notes[index].x = parseInt(note.style.left)
+        notes[index].y = parseInt(note.style.top)
+        notes[index].text = note.innerText
+        saveNotes()
+      }
+    }
+  })
+
+  note.addEventListener("input", ()=>{
+    const index = Array.from(board.children).indexOf(note)
+    if(notes[index]){
+      notes[index].text = note.innerText
+      saveNotes()
+    }
+  })
+
+  board.appendChild(note)
+}
+
+// LOAD SAVED
+notes.forEach(n => createNote(n))
+
+// ADD NEW NOTE
+if(addBtn){
+  addBtn.onclick = ()=>{
+    if(notes.length >= 5){
+      alert("Too many notes!")
+      return
+    }
+
+    const newNote = {
+      text: "New note...",
+      x: Math.random() * 200,
+      y: Math.random() * 300,
+      angle: Math.random() * 20 - 10
+    }
+
+    notes.push(newNote)
+    saveNotes()
+    createNote(newNote)
+  }
+}
+
+const resetMapBtn = document.getElementById("resetMapBtn")
+
+if(resetMapBtn){
+  resetMapBtn.addEventListener("click", () => {
+    markers.forEach(m => {
+      map.removeLayer(m)
+    })
+    markers.length = 0
+    if(polyline){
+      map.removeLayer(polyline)
+      polyline = null
+    }
+
+    localStorage.removeItem("routeData")
+
+  })
+}
+
+
+const resetNotesBtn = document.getElementById("resetNotesBtn")
+
+if(resetNotesBtn){
+  resetNotesBtn.addEventListener("click", () => {
+    
+    const allNotes = board.querySelectorAll(".sticky")
+    allNotes.forEach(n => n.remove())
+    notes.length = 0
+
+    localStorage.removeItem("stickyNotes")
+
+  })
+}
 </script>
 
 </body>
