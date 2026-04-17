@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
   <title>JapanEase | A Beginner’s Guide to Japan</title>
 
-  <style>
+<style>
     :root {
       --autumn-red: #b63e2e;
       --autumn-orange: #d87c3f;
@@ -72,11 +72,13 @@
     nav a:hover {
       color: var(--autumn-orange);
     }
-nav a.active {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  color: var(--autumn-orange);
-}
+
+    nav a.active {
+     text-decoration: underline;
+     text-underline-offset: 6px;
+     color: var(--autumn-orange);
+    }
+
     main {
       display: flex;
       justify-content: center;
@@ -106,45 +108,50 @@ nav a.active {
       text-decoration: underline;
     }
 
-.budget-section {
+.table-container {
   width: 100%;
-  max-width: 500px; 
-  margin-bottom: 20px;
+  max-width: 900px;
+  background: var(--autumn-light);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
 }
-.budget-label {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-.budget-bar {
-  height: 25px;
-  border-radius: 12px;
-  background-color: #fff0e5;
-  overflow: hidden;
-  border: 2px solid #8a5a44;
-}
-.budget-fill {
-  height: 100%;
-  width: 0;
-  text-align: right;
-  padding-right: 8px;
-  color: white;
-  font-weight: bold;
-  line-height: 25px;
-  border-radius: 12px 0 0 12px;
-}
-.meals { background-color: #d87c3f; }
-.transport { background-color: #b63e2e; }
-.remaining { background-color: #8a5a44; }
 
-  </style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid var(--autumn-brown);
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: var(--autumn-brown);
+  color: white;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  margin: 2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+
+.edit { background: var(--autumn-orange); color: white; }
+.delete { background: var(--autumn-red); color: white; }
+</style>
 </head>
+
 <body>
-  <header>
-    <img src="images/WEBSITEICON.png" alt="JapanEase Logo" class="logo">
-    <h1>JapanEase</h1>
-    <h2>A Beginner’s Guide to Japan</h2>
-  </header>
+
+<header>
+  <h1>Expense Tracker</h1>
+</header>
 
   <nav>
     <a href="A_home.html">Home</a>
@@ -159,63 +166,30 @@ nav a.active {
     <a href="F_aboutus.html">About Us</a>
   </nav>
 
-<body>
+<main>
+<div class="table-container">
 
-<h1>Budget Breakdown</h1>
+<h2>Add Expense</h2>
 
-<div class="budget-section">
-  <div class="budget-label">
-    <span>Meals</span><span id="mealsValue">¥0</span>
-  </div>
-  <div class="budget-bar">
-    <div class="budget-fill meals" id="mealsBar"></div>
-  </div>
+<input type="text" id="item" placeholder="Item (e.g. Sushi)">
+<input type="number" id="amount" placeholder="Amount (¥)">
+<button onclick="addExpense()">Add</button>
+
+<h2>Expense List</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Amount (¥)</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="expenseTable"></tbody>
+</table>
+
 </div>
-
-<div class="budget-section">
-  <div class="budget-label">
-    <span>Transport</span><span id="transportValue">¥0</span>
-  </div>
-  <div class="budget-bar">
-    <div class="budget-fill transport" id="transportBar"></div>
-  </div>
-</div>
-
-<div class="budget-section">
-  <div class="budget-label">
-    <span>Remaining</span><span id="remainingValue">¥0</span>
-  </div>
-  <div class="budget-bar">
-    <div class="budget-fill remaining" id="remainingBar"></div>
-  </div>
-</div>
-
-<script>
-// Load saved trip data
-const savedData = JSON.parse(localStorage.getItem("tripPlanner")) || {};
-const dailyBudget = Number(savedData.dailyBudget) || 0;
-const transportBudget = Number(savedData.transportBudget) || 0;
-const mealsCount = savedData.mealsPerDay ? Number(savedData.mealsPerDay[0]) : 2;
-const mealCost = 1000; // estimated per meal
-const totalMealCost = mealsCount * mealCost;
-const remainingBudget = dailyBudget - totalMealCost - transportBudget;
-
-// Function to update bars
-function updateBar(barId, value, total) {
-  const percent = total > 0 ? Math.min((value / total) * 100, 100) : 0;
-  document.getElementById(barId).style.width = percent + "%";
-  return percent;
-}
-
-// Update progress bars and values
-document.getElementById("mealsValue").textContent = `¥${totalMealCost}`;
-document.getElementById("transportValue").textContent = `¥${transportBudget}`;
-document.getElementById("remainingValue").textContent = `¥${remainingBudget > 0 ? remainingBudget : 0}`;
-
-updateBar("mealsBar", totalMealCost, dailyBudget);
-updateBar("transportBar", transportBudget, dailyBudget);
-updateBar("remainingBar", remainingBudget > 0 ? remainingBudget : 0, dailyBudget);
-</script>
+</main>
 
 <footer>
   <p>© 2025 JapanEase. All Rights Reserved.</p>
@@ -226,5 +200,72 @@ updateBar("remainingBar", remainingBudget > 0 ? remainingBudget : 0, dailyBudget
     <a href="https://www.instagram.com/allyespozo/">Alijah IG</a>
   </p>
 </footer>
+
+<script>
+let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+// DISPLAY
+function displayExpenses() {
+  const table = document.getElementById("expenseTable");
+  table.innerHTML = "";
+
+  expenses.forEach((exp, index) => {
+    table.innerHTML += `
+      <tr>
+        <td>${exp.item}</td>
+        <td>${exp.amount}</td>
+        <td>
+          <button class="action-btn edit" onclick="editExpense(${index})">Edit</button>
+          <button class="action-btn delete" onclick="deleteExpense(${index})">Delete</button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+// CREATE
+function addExpense() {
+  const item = document.getElementById("item").value;
+  const amount = document.getElementById("amount").value;
+
+  if (!item || !amount) {
+    alert("Fill all fields");
+    return;
+  }
+
+  expenses.push({ item, amount });
+  save();
+}
+
+// DELETE
+function deleteExpense(index) {
+  expenses.splice(index, 1);
+  save();
+}
+
+// UPDATE
+function editExpense(index) {
+  const newItem = prompt("Edit item:", expenses[index].item);
+  const newAmount = prompt("Edit amount:", expenses[index].amount);
+
+  if (newItem && newAmount) {
+    expenses[index] = { item: newItem, amount: newAmount };
+    save();
+  }
+}
+
+// SAVE + REFRESH
+function save() {
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+  displayExpenses();
+
+  document.getElementById("item").value = "";
+  document.getElementById("amount").value = "";
+}
+
+// INIT
+displayExpenses();
+</script>
+
 </body>
 </html>
