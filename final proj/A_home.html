@@ -200,6 +200,55 @@
       font-weight: bold;
      }
 
+     .checklist-box {
+  background: var(--autumn-light);
+  color: var(--autumn-dark);
+  border-radius: 18px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  padding: 20px;
+  max-width: 300px;
+  flex: 1 1 250px;
+}
+
+.checklist-box h3 {
+  margin-bottom: 10px;
+}
+
+.checklist-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist-box li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.add-task {
+  margin-top: 10px;
+}
+
+.add-task input {
+  width: 70%;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.add-task button {
+  padding: 5px 10px;
+  border: none;
+  background: var(--autumn-orange);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+section:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: var(--autumn-light); 
+}
+
   </style>
 </head>
 <body>
@@ -256,6 +305,22 @@
       <p>Fukuoka <span class="heart">♡</span></p>
     </div>
   </section>
+
+  <section class="checklist-box">
+  <h3>Travel Checklist</h3>
+
+  <ul id="checklist">
+    <li><input type="checkbox"> Passport</li>
+    <li><input type="checkbox"> Tickets</li>
+    <li><input type="checkbox"> Money / Card</li>
+    <li><input type="checkbox"> Phone Charger</li>
+  </ul>
+
+  <div class="add-task">
+    <input type="text" id="new-task" placeholder="Add new item...">
+    <button onclick="addTask()">Add</button>
+  </div>
+</section>
 </main>
 
 
@@ -270,6 +335,19 @@
 </footer>
 
   <script>
+  function addTask() {
+  const input = document.getElementById("new-task");
+  const taskText = input.value.trim();
+
+  if (taskText === "") return;
+
+  const li = document.createElement("li");
+  li.innerHTML = `<input type="checkbox"> ${taskText}`;
+
+  document.getElementById("checklist").appendChild(li);
+
+  input.value = "";
+}
    
    const user = localStorage.getItem("japaneaseUser");
 
