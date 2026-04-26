@@ -1,98 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sticky Notes</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f5f5f5;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Shekinah</title>
 
-    #addBtn {
-      font-size: 24px;
-      padding: 10px;
-      cursor: pointer;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
-    #container {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+<style>
+:root {
+  --main: #b63e2e;
+  --accent: #d87c3f;
+  --light: #f6e7d8;
+  --dark: #3c2415;
+}
 
-    .note {
-      width: 150px;
-      height: 150px;
-      background: #fffa8b;
-      padding: 10px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    }
+body {
+  margin: 0;
+  font-family: 'Zen Old Mincho', serif;
+  background: var(--light);
+  color: var(--dark);
+  transition: 0.4s;
+  overflow-x: hidden;
+}
 
-    textarea {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: transparent;
-      resize: none;
-      outline: none;
-    }
+.dark {
+  background: #1e1e1e;
+  color: #fff;
+}
 
-    #msg {
-      color: red;
-    }
-  </style>
+header {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.typewriter {
+  font-size: 20px;
+  color: var(--accent);
+  margin-top: 10px;
+}
+
+/* BUTTON */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--main);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* CARDS */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  width: 250px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.card-front {
+  background: var(--main);
+  color: white;
+}
+
+.card-back {
+  background: var(--accent);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* SKILLS */
+.skills {
+  padding: 40px;
+}
+
+.skill {
+  margin: 15px 0;
+}
+
+.bar {
+  height: 10px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  background: var(--main);
+  transition: width 1s ease;
+}
+
+/* FUN FACTS */
+.facts {
+  text-align: center;
+  padding: 40px;
+}
+
+.fact-btn {
+  padding: 10px 20px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.fact-display {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* FLOATING EFFECT */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* POPUP */
+#achievement-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3c2415;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.4s;
+  z-index: 999;
+}
+
+#achievement-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BUTTON */
+.open-ach {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #d87c3f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* PANEL */
+.achievements-panel {
+  position: fixed;
+  left: -300px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #f6e7d8;
+  padding: 20px;
+  transition: 0.4s;
+  box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+}
+
+.achievements-panel.open {
+  left: 0;
+}
+
+.achievements-panel li {
+  margin: 10px 0;
+}
+</style>
 </head>
+
 <body>
 
-<button id="addBtn">+</button>
-<p id="msg"></p>
-<div id="container"></div>
+<button class="toggle-btn" onclick="toggleTheme()">🌙</button>
 
+<header>
+  <h1 class="floating">Hi, I'm Shekinah ✨</h1>
+  <div class="typewriter" id="type"></div>
+</header>
+
+<section class="card-container">
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">🎭 Personality</div>
+      <div class="card-back">Creative, driven, expressive</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">🎯 Goals</div>
+      <div class="card-back">Growth, success, impact</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">💡 Interests</div>
+      <div class="card-back">Music, coding, writing</div>
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>My Skills</h2>
+
+  <div class="skill">
+    Math
+    <div class="bar"><div class="fill" data-width="90%"></div></div>
+  </div>
+
+  <div class="skill">
+    Creativity
+    <div class="bar"><div class="fill" data-width="95%"></div></div>
+  </div>
+
+  <div class="skill">
+    Coding
+    <div class="bar"><div class="fill" data-width="80%"></div></div>
+  </div>
+</section>
+
+<section class="facts">
+  <h2>Fun Facts About Me 🎉</h2>
+  <button class="fact-btn" onclick="showFact()">Reveal a Fact</button>
+  <div class="fact-display" id="fact"></div>
+</section>
+
+<div id="achievement-popup"></div>
+
+<!-- ACHIEVEMENTS PANEL -->
+<div class="achievements-panel" id="achPanel">
+  <h3>🏆 Achievements</h3>
+  <ul id="achList"></ul>
+</div>
+
+<button class="open-ach" onclick="toggleAchievements()">🏆</button>
 <script>
-  const addBtn = document.getElementById("addBtn");
-  const container = document.getElementById("container");
-  const msg = document.getElementById("msg");
+// THEME TOGGLE
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
 
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
-
-  function saveNotes() {
-    localStorage.setItem("notes", JSON.stringify(notes));
+// TYPEWRITER
+const text = ["Student ✏️", "Creator 🎨", "Future Success 💼"];
+let i = 0, j = 0;
+function typeEffect() {
+  if (j < text[i].length) {
+    document.getElementById("type").textContent += text[i][j];
+    j++;
+    setTimeout(typeEffect, 100);
+  } else {
+    setTimeout(() => {
+      document.getElementById("type").textContent = "";
+      j = 0;
+      i = (i + 1) % text.length;
+      typeEffect();
+    }, 1500);
   }
+}
+typeEffect();
 
-  function renderNotes() {
-    container.innerHTML = "";
-    notes.forEach((note, index) => {
-      const div = document.createElement("div");
-      div.className = "note";
-
-      const textarea = document.createElement("textarea");
-      textarea.value = note;
-
-      textarea.addEventListener("input", () => {
-        notes[index] = textarea.value;
-        saveNotes();
-      });
-
-      div.appendChild(textarea);
-      container.appendChild(div);
-    });
-  }
-
-  addBtn.addEventListener("click", () => {
-    if (notes.length >= 5) {
-      msg.textContent = "Too much notes!";
-      return;
-    }
-
-    msg.textContent = "";
-    notes.push("");
-    saveNotes();
-    renderNotes();
+// SKILL ANIMATION ON SCROLL
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".fill").forEach(bar => {
+    bar.style.width = bar.dataset.width;
   });
+});
 
-  renderNotes();
+// FUN FACTS
+const facts = [
+  "I love music and instruments 🎸",
+  "I enjoy coding creative projects 💻",
+  "I aim for self-growth everyday 🌱",
+  "I balance academics and creativity ✨"
+];
+
+function showFact() {
+  const random = facts[Math.floor(Math.random() * facts.length)];
+  document.getElementById("fact").textContent = random;
+}
+// LOAD SAVED
+let unlocked = JSON.parse(localStorage.getItem("achievements")) || [];
+
+// SHOW POPUP
+function showAchievement(text) {
+  if (unlocked.includes(text)) return;
+
+  unlocked.push(text);
+  localStorage.setItem("achievements", JSON.stringify(unlocked));
+
+  const popup = document.getElementById("achievement-popup");
+  popup.textContent = "🏆 " + text;
+  popup.classList.add("show");
+
+  updatePanel();
+
+  setTimeout(() => popup.classList.remove("show"), 2500);
+}
+
+// PANEL TOGGLE
+function toggleAchievements() {
+  document.getElementById("achPanel").classList.toggle("open");
+}
+
+// UPDATE LIST
+function updatePanel() {
+  const list = document.getElementById("achList");
+  list.innerHTML = "";
+
+  unlocked.forEach(a => {
+    const li = document.createElement("li");
+    li.textContent = a;
+    list.appendChild(li);
+  });
+}
+
+// INITIAL LOAD
+updatePanel();
+
+
+// 🎯 TRIGGERS (THIS IS THE FUN PART)
+
+// 1. First visit
+window.addEventListener("load", () => {
+  showAchievement("Visited the About Page 👀");
+});
+
+// 2. Click reveal fact
+const oldShowFact = showFact;
+showFact = function() {
+  oldShowFact();
+  showAchievement("Curious Mind 🧠 (Viewed a fact)");
+};
+
+// 3. Scroll achievement
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    showAchievement("Explorer 🚀 (Scrolled down)");
+  }
+});
+
+// 4. Theme toggle achievement
+const oldToggle = toggleTheme;
+toggleTheme = function() {
+  oldToggle();
+  showAchievement("Duality 🌗 (Toggled theme)");
+};
 </script>
 
 </body>
